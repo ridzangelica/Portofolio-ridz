@@ -14,27 +14,38 @@
     <style>
         body { 
             font-family: 'Inter', sans-serif; 
-            background-color: #0f172a; /* Slate 900 */
-            color: #f8fafc; /* Slate 50 */
+            background-color: var(--bg-color, #0f172a); 
+            color: var(--text-color, #f8fafc);
+            transition: background-color 0.4s ease, color 0.4s ease;
         }
         /* Efek Kaca (Glassmorphism) untuk Kartu */
         .glass-card { 
-            background: rgba(30, 41, 59, 0.6); 
+            background: var(--card-bg, rgba(30, 41, 59, 0.6)); 
             backdrop-filter: blur(12px); 
             -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.08); 
+            border: 1px solid var(--card-border, rgba(255, 255, 255, 0.08)); 
+            transition: background 0.4s ease, border-color 0.4s ease;
         }
     </style>
 </head>
-<body class="min-h-screen flex flex-col items-center p-6 relative overflow-x-hidden">
+<body class="min-h-screen flex flex-col items-center p-6 relative overflow-x-hidden" id="main-body" data-theme="cyber">
+    
     <!-- Background Glow Effect -->
-    <div class="absolute top-[-10%] left-[-10%] w-96 h-96 bg-cyan-600 rounded-full mix-blend-multiply filter blur-[128px] opacity-20 -z-10"></div>
-    <div class="absolute bottom-[-10%] right-[-10%] w-96 h-96 bg-blue-600 rounded-full mix-blend-multiply filter blur-[128px] opacity-20 -z-10"></div>
-    <div class="absolute top-[40%] right-[10%] w-72 h-72 bg-purple-600 rounded-full mix-blend-multiply filter blur-[128px] opacity-20 -z-10"></div>
+    <div id="glow-1" class="absolute top-[-10%] left-[-10%] w-96 h-96 bg-cyan-600 rounded-full mix-blend-multiply filter blur-[128px] opacity-20 -z-10 transition-all duration-500"></div>
+    <div id="glow-2" class="absolute bottom-[-10%] right-[-10%] w-96 h-96 bg-blue-600 rounded-full mix-blend-multiply filter blur-[128px] opacity-20 -z-10 transition-all duration-500"></div>
+    <div id="glow-3" class="absolute top-[40%] right-[10%] w-72 h-72 bg-purple-600 rounded-full mix-blend-multiply filter blur-[128px] opacity-20 -z-10 transition-all duration-500"></div>
+
+    <!-- Theme Switcher Button (Pojok Kanan Atas) -->
+    <div class="absolute top-6 right-6 z-20 flex items-center gap-2 bg-slate-800/80 backdrop-blur-md px-3 py-1.5 rounded-full border border-slate-700 shadow-lg">
+        <span class="text-xs text-slate-400 hidden sm:inline"><i class="fa-solid fa-palette mr-1"></i> Tema:</span>
+        <button onclick="setTheme('cyber')" id="btn-cyber" class="w-6 h-6 rounded-full bg-cyan-500 border-2 border-slate-900 focus:outline-none transition transform hover:scale-110" title="Cyber Dark"></button>
+        <button onclick="setTheme('matrix')" id="btn-matrix" class="w-6 h-6 rounded-full bg-emerald-500 border-2 border-slate-900 focus:outline-none transition transform hover:scale-110" title="Matrix Green"></button>
+        <button onclick="setTheme('purple')" id="btn-purple" class="w-6 h-6 rounded-full bg-purple-500 border-2 border-slate-900 focus:outline-none transition transform hover:scale-110" title="Neon Purple"></button>
+    </div>
 
     <!-- Header / Profile Section -->
     <header class="text-center mt-12 mb-14 w-full max-w-3xl">
-        <div class="w-28 h-28 bg-gradient-to-tr from-cyan-500 to-blue-600 rounded-full mx-auto mb-5 flex items-center justify-center text-4xl font-bold shadow-[0_0_25px_rgba(6,182,212,0.4)] border-4 border-slate-800">
+        <div id="profile-avatar" class="w-28 h-28 bg-gradient-to-tr from-cyan-500 to-blue-600 rounded-full mx-auto mb-5 flex items-center justify-center text-4xl font-bold shadow-[0_0_25px_rgba(6,182,212,0.4)] border-4 border-slate-800 transition-all duration-500">
             R
         </div>
         <h1 class="text-3xl font-bold tracking-wider mb-2 text-white">ridz_angelica.ugg</h1>
@@ -73,25 +84,25 @@
     <main class="w-full max-w-4xl z-10">
         <div class="flex items-center justify-center gap-3 mb-8">
             <div class="h-[1px] w-16 md:w-24 bg-slate-700"></div>
-            <h2 class="text-lg md:text-xl font-semibold text-slate-200 text-center"><i class="fa-solid fa-mobile-screen-button mr-2 text-cyan-500"></i>Perlengkapan & Spesifikasi Perangkat</h2>
+            <h2 class="text-lg md:text-xl font-semibold text-slate-200 text-center"><i class="fa-solid fa-mobile-screen-button mr-2 text-cyan-500" id="header-icon"></i>Perlengkapan & Spesifikasi Perangkat</h2>
             <div class="h-[1px] w-16 md:w-24 bg-slate-700"></div>
         </div>
         
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             <!-- Device 1: Redmi 9C -->
-            <div class="glass-card p-7 rounded-2xl hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(6,182,212,0.15)] transition duration-300">
+            <div class="glass-card p-7 rounded-2xl hover:-translate-y-1 hover:shadow-xl transition duration-300">
                 <div class="flex justify-between items-start mb-6">
                     <div>
                         <h3 class="text-2xl font-bold text-white mb-1">Redmi 9C</h3>
                         <p class="text-xs text-slate-400"><i class="fa-brands fa-android text-green-400 mr-1"></i> Xiaomi</p>
                     </div>
-                    <span class="bg-cyan-950 text-cyan-300 text-xs px-3 py-1.5 rounded-full border border-cyan-800/50 font-medium tracking-wide">Daily Device</span>
+                    <span class="bg-cyan-950 text-cyan-300 text-xs px-3 py-1.5 rounded-full border border-cyan-800/50 font-medium tracking-wide" id="tag-1">Daily Device</span>
                 </div>
                 
                 <div class="space-y-3">
                     <div class="bg-slate-800/50 rounded-lg p-3 flex justify-between items-center border border-slate-700/50">
                         <span class="text-slate-400 text-sm"><i class="fa-solid fa-fingerprint mr-2"></i>Codename</span>
-                        <span class="font-mono text-sm text-cyan-300 bg-cyan-900/30 px-2 py-0.5 rounded">angelica</span>
+                        <span class="font-mono text-sm text-cyan-300 bg-cyan-900/30 px-2 py-0.5 rounded" id="code-1">angelica</span>
                     </div>
                     <div class="bg-slate-800/50 rounded-lg p-3 flex justify-between items-center border border-slate-700/50">
                         <span class="text-slate-400 text-sm"><i class="fa-solid fa-microchip mr-2"></i>Chipset</span>
@@ -103,25 +114,20 @@
                     </div>
                     <div class="bg-slate-800/50 rounded-lg p-3 flex justify-between items-center border border-slate-700/50">
                         <span class="text-slate-400 text-sm"><i class="fa-solid fa-compact-disc mr-2"></i>ROM</span>
-                        <span class="font-semibold text-cyan-50 text-sm">crDroid 12.5</span>
+                        <span class="font-semibold text-cyan-50 text-sm">Custom ROM</span>
                     </div>
                     <div class="bg-slate-800/50 rounded-lg p-3 flex justify-between items-center border border-slate-700/50">
                         <span class="text-slate-400 text-sm"><i class="fa-solid fa-code-branch mr-2"></i>Android</span>
                         <span class="font-semibold text-cyan-50 text-sm">16</span>
                     </div>
-                    
-                    <!-- NEW: Root Status -->
                     <div class="bg-slate-800/50 rounded-lg p-3 flex justify-between items-center border border-slate-700/50">
                         <span class="text-slate-400 text-sm"><i class="fa-solid fa-hashtag mr-2"></i>Root</span>
                         <span class="font-semibold text-green-400 text-sm">Nadeko SU v30020</span>
                     </div>
-                    
-                    <!-- NEW: Kernel -->
                     <div class="bg-slate-800/50 rounded-lg p-3 flex justify-between items-center border border-slate-700/50">
                         <span class="text-slate-400 text-sm"><i class="fa-solid fa-cogs mr-2"></i>Kernel</span>
                         <span class="font-semibold text-cyan-50 text-xs text-right leading-tight max-w-[65%]">4.19.275-Ridz_angelica OC Kernel hililuo G35</span>
                     </div>
-                    
                     <div class="bg-slate-800/50 rounded-lg p-3 flex justify-between items-center border border-slate-700/50">
                         <span class="text-slate-400 text-sm"><i class="fa-solid fa-memory mr-2"></i>Storage</span>
                         <span class="font-semibold text-cyan-50 text-sm">4 GB / 64 GB</span>
@@ -130,7 +136,7 @@
             </div>
 
             <!-- Device 2: Redmi Note 5A Prime -->
-            <div class="glass-card p-7 rounded-2xl hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(59,130,246,0.15)] transition duration-300">
+            <div class="glass-card p-7 rounded-2xl hover:-translate-y-1 hover:shadow-xl transition duration-300">
                 <div class="flex justify-between items-start mb-6">
                     <div>
                         <h3 class="text-2xl font-bold text-white mb-1">Redmi Note 5A Prime</h3>
@@ -154,25 +160,20 @@
                     </div>
                     <div class="bg-slate-800/50 rounded-lg p-3 flex justify-between items-center border border-slate-700/50">
                         <span class="text-slate-400 text-sm"><i class="fa-solid fa-compact-disc mr-2"></i>ROM</span>
-                        <span class="font-semibold text-blue-50 text-sm">Infinity 3.5</span>
+                        <span class="font-semibold text-blue-50 text-sm">Custom ROM</span>
                     </div>
                     <div class="bg-slate-800/50 rounded-lg p-3 flex justify-between items-center border border-slate-700/50">
                         <span class="text-slate-400 text-sm"><i class="fa-solid fa-code-branch mr-2"></i>Android</span>
                         <span class="font-semibold text-blue-50 text-sm">16</span>
                     </div>
-
-                    <!-- NEW: Root Status -->
                     <div class="bg-slate-800/50 rounded-lg p-3 flex justify-between items-center border border-slate-700/50">
                         <span class="text-slate-400 text-sm"><i class="fa-solid fa-hashtag mr-2"></i>Root</span>
                         <span class="font-semibold text-green-400 text-sm">KernelSU v32546-2</span>
                     </div>
-                    
-                    <!-- NEW: Kernel -->
                     <div class="bg-slate-800/50 rounded-lg p-3 flex justify-between items-center border border-slate-700/50">
                         <span class="text-slate-400 text-sm"><i class="fa-solid fa-cogs mr-2"></i>Kernel</span>
                         <span class="font-semibold text-blue-50 text-xs text-right leading-tight max-w-[65%]">4.19.325 Mystrile-Mi8937</span>
                     </div>
-
                     <div class="bg-slate-800/50 rounded-lg p-3 flex justify-between items-center border border-slate-700/50">
                         <span class="text-slate-400 text-sm"><i class="fa-solid fa-memory mr-2"></i>Storage</span>
                         <span class="font-semibold text-blue-50 text-sm">3 GB / 32 GB</span>
@@ -185,6 +186,45 @@
     <footer class="mt-16 mb-6 text-slate-500 text-sm z-10 text-center">
         <p>&copy; 2026 ridz_angelica.ugg. Crafted for custom ROM enthusiasts.</p>
     </footer>
+
+    <!-- Script untuk Switch Tema Interaktif -->
+    <script>
+        function setTheme(theme) {
+            const avatar = document.getElementById('profile-avatar');
+            const glow1 = document.getElementById('glow-1');
+            const glow2 = document.getElementById('glow-2');
+            const glow3 = document.getElementById('glow-3');
+            
+            if (theme === 'matrix') {
+                avatar.className = "w-28 h-28 bg-gradient-to-tr from-emerald-500 to-green-700 rounded-full mx-auto mb-5 flex items-center justify-center text-4xl font-bold shadow-[0_0_25px_rgba(16,185,129,0.4)] border-4 border-slate-800 transition-all duration-500 text-white";
+                glow1.className = "absolute top-[-10%] left-[-10%] w-96 h-96 bg-emerald-600 rounded-full mix-blend-multiply filter blur-[128px] opacity-20 -z-10 transition-all duration-500";
+                glow2.className = "absolute bottom-[-10%] right-[-10%] w-96 h-96 bg-green-600 rounded-full mix-blend-multiply filter blur-[128px] opacity-20 -z-10 transition-all duration-500";
+                glow3.className = "absolute top-[40%] right-[10%] w-72 h-72 bg-teal-600 rounded-full mix-blend-multiply filter blur-[128px] opacity-20 -z-10 transition-all duration-500";
+            } else if (theme === 'purple') {
+                avatar.className = "w-28 h-28 bg-gradient-to-tr from-purple-500 to-indigo-600 rounded-full mx-auto mb-5 flex items-center justify-center text-4xl font-bold shadow-[0_0_25px_rgba(168,85,247,0.4)] border-4 border-slate-800 transition-all duration-500 text-white";
+                glow1.className = "absolute top-[-10%] left-[-10%] w-96 h-96 bg-purple-600 rounded-full mix-blend-multiply filter blur-[128px] opacity-20 -z-10 transition-all duration-500";
+                glow2.className = "absolute bottom-[-10%] right-[-10%] w-96 h-96 bg-indigo-600 rounded-full mix-blend-multiply filter blur-[128px] opacity-20 -z-10 transition-all duration-500";
+                glow3.className = "absolute top-[40%] right-[10%] w-72 h-72 bg-pink-600 rounded-full mix-blend-multiply filter blur-[128px] opacity-20 -z-10 transition-all duration-500";
+            } else {
+                // Cyber Dark (Default)
+                avatar.className = "w-28 h-28 bg-gradient-to-tr from-cyan-500 to-blue-600 rounded-full mx-auto mb-5 flex items-center justify-center text-4xl font-bold shadow-[0_0_25px_rgba(6,182,212,0.4)] border-4 border-slate-800 transition-all duration-500 text-white";
+                glow1.className = "absolute top-[-10%] left-[-10%] w-96 h-96 bg-cyan-600 rounded-full mix-blend-multiply filter blur-[128px] opacity-20 -z-10 transition-all duration-500";
+                glow2.className = "absolute bottom-[-10%] right-[-10%] w-96 h-96 bg-blue-600 rounded-full mix-blend-multiply filter blur-[128px] opacity-20 -z-10 transition-all duration-500";
+                glow3.className = "absolute top-[40%] right-[10%] w-72 h-72 bg-purple-600 rounded-full mix-blend-multiply filter blur-[128px] opacity-20 -z-10 transition-all duration-500";
+            }
+            
+            // Simpan pilihan tema ke memori browser lokal
+            localStorage.setItem('preferred_theme', theme);
+        }
+
+        // Muat tema tersimpan saat halaman dibuka
+        window.onload = function() {
+            const savedTheme = localStorage.getItem('preferred_theme');
+            if (savedTheme) {
+                setTheme(savedTheme);
+            }
+        }
+    </script>
 </body>
-                </html>
+    </html>
     
