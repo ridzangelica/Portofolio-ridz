@@ -16,7 +16,6 @@
             font-family: 'Inter', sans-serif; 
             transition: background-color 0.4s ease, color 0.4s ease;
         }
-        /* Efek Kartu Dinamis */
         .glass-card { 
             backdrop-filter: blur(12px); 
             -webkit-backdrop-filter: blur(12px);
@@ -26,14 +25,14 @@
 </head>
 <body id="page-body" class="min-h-screen flex flex-col items-center p-6 relative overflow-x-hidden">
     
-    <!-- Background Glow Effect (Dinamis) -->
+    <!-- Background Glow Effect -->
     <div id="glow-1" class="absolute top-[-10%] left-[-10%] w-96 h-96 rounded-full mix-blend-multiply filter blur-[128px] opacity-20 -z-10 transition-all duration-500"></div>
     <div id="glow-2" class="absolute bottom-[-10%] right-[-10%] w-96 h-96 rounded-full mix-blend-multiply filter blur-[128px] opacity-20 -z-10 transition-all duration-500"></div>
 
-    <!-- Indikator Mode Aktif (Pojok Kanan Atas) -->
-    <div class="absolute top-6 right-6 z-20 flex items-center gap-2 px-3 py-1.5 rounded-full border shadow-sm text-xs font-medium" id="mode-badge">
-        <i id="mode-icon" class="fa-solid"></i> <span id="mode-text">Auto Mode</span>
-    </div>
+    <!-- Tombol Ganti Tema (Pojok Kanan Atas) -->
+    <button onclick="toggleTheme()" id="theme-toggle-btn" class="absolute top-6 right-6 z-20 flex items-center gap-2 px-4 py-2 rounded-full border shadow-sm text-xs font-medium transition transform hover:scale-105 cursor-pointer">
+        <i id="theme-icon" class="fa-solid"></i> <span id="theme-text">Mode</span>
+    </button>
 
     <!-- Header / Profile Section -->
     <header class="text-center mt-12 mb-14 w-full max-w-3xl">
@@ -45,27 +44,18 @@
         
         <!-- Social Media Buttons -->
         <div class="flex flex-wrap justify-center gap-3">
-            <!-- Tautan TikTok -->
             <a href="https://www.tiktok.com/@ridz_icipers" target="_blank" class="social-btn flex items-center gap-2 transition duration-300 px-5 py-2.5 rounded-full text-sm font-medium border shadow-sm hover:shadow-md">
                 <i class="fa-brands fa-tiktok text-pink-500 text-lg"></i> TikTok Saya
             </a>
-            
-            <!-- Tautan Telegram Profil -->
             <a href="https://t.me/ridz_angelicaugg" target="_blank" class="social-btn flex items-center gap-2 transition duration-300 px-5 py-2.5 rounded-full text-sm font-medium border shadow-sm hover:shadow-md">
                 <i class="fa-brands fa-telegram text-blue-500 text-lg"></i> Telegram Saya
             </a>
-
-            <!-- Tautan Telegram Channel -->
             <a href="https://t.me/gosth_blossom" target="_blank" class="social-btn flex items-center gap-2 transition duration-300 px-5 py-2.5 rounded-full text-sm font-medium border shadow-sm hover:shadow-md">
                 <i class="fa-solid fa-bullhorn text-blue-500 text-lg"></i> Channel Saya
             </a>
-
-            <!-- Tautan Telegram Grup -->
             <a href="https://t.me/+bmLwbpznqeVmOGY1" target="_blank" class="social-btn flex items-center gap-2 transition duration-300 px-5 py-2.5 rounded-full text-sm font-medium border shadow-sm hover:shadow-md">
                 <i class="fa-solid fa-users text-blue-500 text-lg"></i> Grup Telegram
             </a>
-
-            <!-- Tautan GitHub -->
             <a href="https://github.com/ridzangelica" target="_blank" class="social-btn flex items-center gap-2 transition duration-300 px-5 py-2.5 rounded-full text-sm font-medium border shadow-sm hover:shadow-md">
                 <i class="fa-brands fa-github text-lg" id="gh-icon"></i> GitHub Saya
             </a>
@@ -105,8 +95,8 @@
                         <span class="font-semibold text-sm">PowerVR GE8320</span>
                     </div>
                     <div class="spec-row rounded-lg p-3 flex justify-between items-center border">
-                        <span class="text-sm"><i class="fa-solid fa-compact-disc mr-2 text-cyan-500"></i>Android Custom</span>
-                        <span class="font-semibold text-sm">Android Custom</span>
+                        <span class="text-sm"><i class="fa-solid fa-compact-disc mr-2 text-cyan-500"></i>ROM</span>
+                        <span class="font-semibold text-sm">crDroid 12.5</span>
                     </div>
                     <div class="spec-row rounded-lg p-3 flex justify-between items-center border">
                         <span class="text-sm"><i class="fa-solid fa-code-branch mr-2 text-cyan-500"></i>Android</span>
@@ -151,8 +141,8 @@
                         <span class="font-semibold text-sm">Adreno 505</span>
                     </div>
                     <div class="spec-row rounded-lg p-3 flex justify-between items-center border">
-                        <span class="text-sm"><i class="fa-solid fa-compact-disc mr-2 text-blue-500"></i>Android Custom</span>
-                        <span class="font-semibold text-sm">Android Custom</span>
+                        <span class="text-sm"><i class="fa-solid fa-compact-disc mr-2 text-blue-500"></i>ROM</span>
+                        <span class="font-semibold text-sm">Infinity 3.5</span>
                     </div>
                     <div class="spec-row rounded-lg p-3 flex justify-between items-center border">
                         <span class="text-sm"><i class="fa-solid fa-code-branch mr-2 text-blue-500"></i>Android</span>
@@ -179,17 +169,16 @@
         <p>&copy; 2026 ridz_angelica.ugg. Crafted for custom ROM enthusiasts.</p>
     </footer>
 
-    <!-- Skrip Otomatis Mode Terang / Gelap Berdasarkan Jam Lokal -->
+    <!-- Skrip Tema Otomatis Jam Klien + Tombol Manual -->
     <script>
-        function applyTimeBasedTheme() {
-            const currentHour = new Date().getHours();
+        function setTheme(mode) {
             const body = document.getElementById('page-body');
             const avatar = document.getElementById('profile-avatar');
             const mainTitle = document.getElementById('main-title');
             const subTitle = document.getElementById('sub-title');
-            const modeBadge = document.getElementById('mode-badge');
-            const modeIcon = document.getElementById('mode-icon');
-            const modeText = document.getElementById('mode-text');
+            const themeBtn = document.getElementById('theme-toggle-btn');
+            const themeIcon = document.getElementById('theme-icon');
+            const themeText = document.getElementById('theme-text');
             const glow1 = document.getElementById('glow-1');
             const glow2 = document.getElementById('glow-2');
             const dividerLines = document.querySelectorAll('.divider-line');
@@ -202,21 +191,17 @@
             const badgeDev2 = document.getElementById('badge-dev2');
             const footerText = document.getElementById('footer-text');
 
-            // Jam 06.00 pagi sampai 17.59 sore = Light Mode (Terang)
-            // Jam 18.00 sore sampai 05.59 pagi = Dark Mode (Gelap)
-            const isDayTime = currentHour >= 6 && currentHour < 18;
-
-            if (isDayTime) {
+            if (mode === 'light') {
                 // --- LIGHT MODE ---
-                body.style.backgroundColor = "#f8fafc"; // Slate 50
-                body.style.color = "#0f172a"; // Slate 900
+                body.style.backgroundColor = "#f8fafc";
+                body.style.color = "#0f172a";
                 
                 glow1.className = "absolute top-[-10%] left-[-10%] w-96 h-96 bg-cyan-300 rounded-full mix-blend-multiply filter blur-[128px] opacity-40 -z-10 transition-all duration-500";
                 glow2.className = "absolute bottom-[-10%] right-[-10%] w-96 h-96 bg-blue-300 rounded-full mix-blend-multiply filter blur-[128px] opacity-40 -z-10 transition-all duration-500";
 
-                modeBadge.className = "absolute top-6 right-6 z-20 flex items-center gap-2 px-3 py-1.5 rounded-full border border-amber-300 bg-amber-50 text-amber-800 shadow-sm text-xs font-medium";
-                modeIcon.className = "fa-solid fa-sun text-amber-500";
-                modeText.innerText = "Light Mode (Siang)";
+                themeBtn.className = "absolute top-6 right-6 z-20 flex items-center gap-2 px-4 py-2 rounded-full border border-amber-300 bg-amber-50 text-amber-800 shadow-sm text-xs font-medium transition transform hover:scale-105 cursor-pointer";
+                themeIcon.className = "fa-solid fa-sun text-amber-500";
+                themeText.innerText = "Terang";
 
                 avatar.className = "w-28 h-28 bg-gradient-to-tr from-cyan-500 to-blue-600 rounded-full mx-auto mb-5 flex items-center justify-center text-4xl font-bold shadow-md border-4 border-white text-white transition-all duration-500";
                 mainTitle.className = "text-3xl font-bold tracking-wider mb-2 text-slate-900";
@@ -230,7 +215,7 @@
                 dividerLines.forEach(line => line.className = "h-[1px] w-16 md:w-24 bg-slate-300 divider-line");
 
                 cards.forEach(card => {
-                    card.className = "glass-card p-7 rounded-2xl bg-white/70 border border-slate-200/80 shadow-lg hover:-translate-y-1 transition duration-300";
+                    card.className = "glass-card p-7 rounded-2xl bg-white/70 border border-slate-200/80 shadow-lg hover:-translate-y-1 transition duration-300 text-slate-900";
                 });
 
                 specRows.forEach(row => {
@@ -245,17 +230,18 @@
                 badgeDev2.className = "text-xs px-3 py-1.5 rounded-full border bg-slate-100 text-slate-700 border-slate-300 font-medium tracking-wide";
                 footerText.className = "mt-16 mb-6 text-slate-500 text-sm z-10 text-center";
 
+                localStorage.setItem('user_theme', 'light');
             } else {
                 // --- DARK MODE ---
-                body.style.backgroundColor = "#0f172a"; // Slate 900
-                body.style.color = "#f8fafc"; // Slate 50
+                body.style.backgroundColor = "#0f172a";
+                body.style.color = "#f8fafc";
 
                 glow1.className = "absolute top-[-10%] left-[-10%] w-96 h-96 bg-cyan-600 rounded-full mix-blend-multiply filter blur-[128px] opacity-20 -z-10 transition-all duration-500";
                 glow2.className = "absolute bottom-[-10%] right-[-10%] w-96 h-96 bg-blue-600 rounded-full mix-blend-multiply filter blur-[128px] opacity-20 -z-10 transition-all duration-500";
 
-                modeBadge.className = "absolute top-6 right-6 z-20 flex items-center gap-2 px-3 py-1.5 rounded-full border border-indigo-800 bg-indigo-950/80 text-indigo-200 shadow-sm text-xs font-medium backdrop-blur-md";
-                modeIcon.className = "fa-solid fa-moon text-indigo-400";
-                modeText.innerText = "Dark Mode (Malam)";
+                themeBtn.className = "absolute top-6 right-6 z-20 flex items-center gap-2 px-4 py-2 rounded-full border border-indigo-800 bg-indigo-950/80 text-indigo-200 shadow-sm text-xs font-medium backdrop-blur-md transition transform hover:scale-105 cursor-pointer";
+                themeIcon.className = "fa-solid fa-moon text-indigo-400";
+                themeText.innerText = "Gelap";
 
                 avatar.className = "w-28 h-28 bg-gradient-to-tr from-cyan-500 to-blue-600 rounded-full mx-auto mb-5 flex items-center justify-center text-4xl font-bold shadow-[0_0_25px_rgba(6,182,212,0.4)] border-4 border-slate-800 text-white transition-all duration-500";
                 mainTitle.className = "text-3xl font-bold tracking-wider mb-2 text-white";
@@ -283,11 +269,35 @@
                 badgeDev1.className = "text-xs px-3 py-1.5 rounded-full border bg-cyan-950 text-cyan-300 border-cyan-800/50 font-medium tracking-wide";
                 badgeDev2.className = "text-xs px-3 py-1.5 rounded-full border bg-slate-800 text-slate-300 border-slate-600/50 font-medium tracking-wide";
                 footerText.className = "mt-16 mb-6 text-slate-500 text-sm z-10 text-center";
+
+                localStorage.setItem('user_theme', 'dark');
             }
         }
 
-        // Jalankan saat halaman dimuat
-        window.onload = applyTimeBasedTheme;
+        function toggleTheme() {
+            const currentTheme = localStorage.getItem('user_theme');
+            if (currentTheme === 'light') {
+                setTheme('dark');
+            } else {
+                setTheme('light');
+            }
+        }
+
+        // Default: Cek jam lokal klien (06:00 - 17:59 = Terang, sisanya Gelap) jika belum ada pilihan tersimpan
+        window.onload = function() {
+            const savedTheme = localStorage.getItem('user_theme');
+            if (savedTheme) {
+                setTheme(savedTheme);
+            } else {
+                const currentHour = new Date().getHours();
+                if (currentHour >= 6 && currentHour < 18) {
+                    setTheme('light');
+                } else {
+                    setTheme('dark');
+                }
+            }
+        }
     </script>
 </body>
-</html>
+                                                                                                                </html>
+                        
