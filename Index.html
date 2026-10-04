@@ -1,11 +1,18 @@
 <!DOCTYPE html>
-<html lang="id">
+<!-- Tambahan class="dark" agar saat web baru dimuat langsung rapi tanpa kedip -->
+<html lang="id" class="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ridz_angelica.ugg - profile</title>
     <!-- Tailwind CSS untuk Styling -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Konfigurasi Tailwind untuk mengaktifkan Mode Gelap otomatis -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+        }
+    </script>
     <!-- FontAwesome untuk Ikon -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Google Fonts -->
@@ -14,50 +21,48 @@
     <style>
         body { 
             font-family: 'Inter', sans-serif; 
-            transition: background-color 0.4s ease, color 0.4s ease;
         }
         .glass-card { 
             backdrop-filter: blur(12px); 
             -webkit-backdrop-filter: blur(12px);
-            transition: all 0.4s ease;
         }
     </style>
 </head>
-<body id="page-body" class="min-h-screen flex flex-col items-center p-6 relative overflow-x-hidden">
+<body class="bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-slate-50 transition-colors duration-500 min-h-screen flex flex-col items-center p-6 relative overflow-x-hidden">
     
-    <!-- Background Glow Effect -->
-    <div id="glow-1" class="absolute top-[-10%] left-[-10%] w-96 h-96 rounded-full mix-blend-multiply filter blur-[128px] opacity-20 -z-10 transition-all duration-500"></div>
-    <div id="glow-2" class="absolute bottom-[-10%] right-[-10%] w-96 h-96 rounded-full mix-blend-multiply filter blur-[128px] opacity-20 -z-10 transition-all duration-500"></div>
+    <!-- Background Glow Effect Dinamis Terang/Gelap -->
+    <div class="absolute top-[-10%] left-[-10%] w-96 h-96 bg-cyan-300 dark:bg-cyan-600 rounded-full mix-blend-multiply filter blur-[128px] opacity-40 dark:opacity-20 -z-10 transition-all duration-500"></div>
+    <div class="absolute bottom-[-10%] right-[-10%] w-96 h-96 bg-blue-300 dark:bg-blue-600 rounded-full mix-blend-multiply filter blur-[128px] opacity-40 dark:opacity-20 -z-10 transition-all duration-500"></div>
 
     <!-- Tombol Ganti Tema (Pojok Kanan Atas) -->
-    <button onclick="toggleTheme()" id="theme-toggle-btn" class="absolute top-6 right-6 z-20 flex items-center gap-2 px-4 py-2 rounded-full border shadow-sm text-xs font-medium transition transform hover:scale-105 cursor-pointer">
-        <i id="theme-icon" class="fa-solid"></i> <span id="theme-text">Mode</span>
+    <button onclick="toggleTheme()" class="absolute top-6 right-6 z-20 flex items-center gap-2 px-4 py-2 rounded-full border border-amber-300 dark:border-indigo-800 bg-amber-50 dark:bg-indigo-950/80 text-amber-800 dark:text-indigo-200 shadow-sm text-xs font-medium transition transform hover:scale-105 cursor-pointer">
+        <i id="theme-icon" class="fa-solid fa-moon"></i> <span id="theme-text">Mode</span>
     </button>
 
     <!-- Header / Profile Section -->
     <header class="text-center mt-12 mb-14 w-full max-w-3xl">
-        <div id="profile-avatar" class="w-28 h-28 bg-gradient-to-tr from-cyan-500 to-blue-600 rounded-full mx-auto mb-5 flex items-center justify-center text-4xl font-bold shadow-lg border-4 transition-all duration-500">
+        <div class="w-28 h-28 bg-gradient-to-tr from-cyan-500 to-blue-600 rounded-full mx-auto mb-5 flex items-center justify-center text-4xl font-bold shadow-md dark:shadow-[0_0_25px_rgba(6,182,212,0.4)] border-4 border-white dark:border-slate-800 text-white transition-all duration-500">
             R
         </div>
-        <h1 id="main-title" class="text-3xl font-bold tracking-wider mb-2">ridz_angelica.ugg</h1>
-        <p id="sub-title" class="text-slate-400 mb-8 text-sm md:text-base">explorasi custom rom,makai mbaking di hp root</p>
+        <h1 class="text-3xl font-bold tracking-wider mb-2 text-slate-900 dark:text-white">ridz_angelica.ugg</h1>
+        <p class="text-slate-600 dark:text-slate-400 mb-8 text-sm md:text-base">explorasi custom rom,makai mbaking di hp root</p>
         
         <!-- Social Media Buttons -->
         <div class="flex flex-wrap justify-center gap-3">
-            <a href="https://www.tiktok.com/@ridz_icipers" target="_blank" class="social-btn flex items-center gap-2 transition duration-300 px-5 py-2.5 rounded-full text-sm font-medium border shadow-sm hover:shadow-md">
+            <a href="https://www.tiktok.com/@ridz_icipers" target="_blank" class="flex items-center gap-2 bg-white/80 dark:bg-slate-800/80 hover:bg-slate-100 dark:hover:bg-slate-700 transition duration-300 px-5 py-2.5 rounded-full text-sm font-medium border border-slate-200 dark:border-slate-700 shadow-sm text-slate-700 dark:text-slate-200">
                 <i class="fa-brands fa-tiktok text-pink-500 text-lg"></i> TikTok Saya
             </a>
-            <a href="https://t.me/ridz_angelicaugg" target="_blank" class="social-btn flex items-center gap-2 transition duration-300 px-5 py-2.5 rounded-full text-sm font-medium border shadow-sm hover:shadow-md">
+            <a href="https://t.me/ridz_angelicaugg" target="_blank" class="flex items-center gap-2 bg-white/80 dark:bg-slate-800/80 hover:bg-slate-100 dark:hover:bg-slate-700 transition duration-300 px-5 py-2.5 rounded-full text-sm font-medium border border-slate-200 dark:border-slate-700 shadow-sm text-slate-700 dark:text-slate-200">
                 <i class="fa-brands fa-telegram text-blue-500 text-lg"></i> Telegram Saya
             </a>
-            <a href="https://t.me/gosth_blossom" target="_blank" class="social-btn flex items-center gap-2 transition duration-300 px-5 py-2.5 rounded-full text-sm font-medium border shadow-sm hover:shadow-md">
+            <a href="https://t.me/gosth_blossom" target="_blank" class="flex items-center gap-2 bg-white/80 dark:bg-slate-800/80 hover:bg-slate-100 dark:hover:bg-slate-700 transition duration-300 px-5 py-2.5 rounded-full text-sm font-medium border border-slate-200 dark:border-slate-700 shadow-sm text-slate-700 dark:text-slate-200">
                 <i class="fa-solid fa-bullhorn text-blue-500 text-lg"></i> Channel Saya
             </a>
-            <a href="https://t.me/+bmLwbpznqeVmOGY1" target="_blank" class="social-btn flex items-center gap-2 transition duration-300 px-5 py-2.5 rounded-full text-sm font-medium border shadow-sm hover:shadow-md">
+            <a href="https://t.me/+bmLwbpznqeVmOGY1" target="_blank" class="flex items-center gap-2 bg-white/80 dark:bg-slate-800/80 hover:bg-slate-100 dark:hover:bg-slate-700 transition duration-300 px-5 py-2.5 rounded-full text-sm font-medium border border-slate-200 dark:border-slate-700 shadow-sm text-slate-700 dark:text-slate-200">
                 <i class="fa-solid fa-users text-blue-500 text-lg"></i> Grup Telegram
             </a>
-            <a href="https://github.com/ridzangelica" target="_blank" class="social-btn flex items-center gap-2 transition duration-300 px-5 py-2.5 rounded-full text-sm font-medium border shadow-sm hover:shadow-md">
-                <i class="fa-brands fa-github text-lg" id="gh-icon"></i> GitHub Saya
+            <a href="https://github.com/ridzangelica" target="_blank" class="flex items-center gap-2 bg-white/80 dark:bg-slate-800/80 hover:bg-slate-100 dark:hover:bg-slate-700 transition duration-300 px-5 py-2.5 rounded-full text-sm font-medium border border-slate-200 dark:border-slate-700 shadow-sm text-slate-700 dark:text-slate-200">
+                <i class="fa-brands fa-github text-slate-900 dark:text-white text-lg"></i> GitHub Saya
             </a>
         </div>
     </header>
@@ -65,34 +70,34 @@
     <!-- Devices List Section -->
     <main class="w-full max-w-4xl z-10">
         <div class="flex items-center justify-center gap-3 mb-8">
-            <div class="h-[1px] w-16 md:w-24 divider-line"></div>
-            <h2 class="text-lg md:text-xl font-semibold text-center"><i class="fa-solid fa-mobile-screen-button mr-2 text-cyan-500"></i>Perlengkapan & Spesifikasi Perangkat</h2>
-            <div class="h-[1px] w-16 md:w-24 divider-line"></div>
+            <div class="h-[1px] w-16 md:w-24 bg-slate-300 dark:bg-slate-700"></div>
+            <h2 class="text-lg md:text-xl font-semibold text-center text-slate-900 dark:text-slate-200"><i class="fa-solid fa-mobile-screen-button mr-2 text-cyan-500"></i>Perlengkapan & Spesifikasi Perangkat</h2>
+            <div class="h-[1px] w-16 md:w-24 bg-slate-300 dark:bg-slate-700"></div>
         </div>
         
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             <!-- Device 1: Redmi 9C -->
-            <div class="glass-card p-7 rounded-2xl hover:-translate-y-1 transition duration-300">
+            <div class="glass-card p-7 rounded-2xl bg-white/70 dark:bg-slate-800/60 border border-slate-200/80 dark:border-white/10 shadow-lg dark:shadow-xl hover:-translate-y-1 transition duration-300 text-slate-900 dark:text-slate-100">
                 <div class="flex justify-between items-start mb-6">
                     <div>
                         <h3 class="text-2xl font-bold mb-1">Redmi 9C</h3>
-                        <p class="text-xs text-slate-400"><i class="fa-brands fa-android text-green-500 mr-1"></i> Xiaomi</p>
+                        <p class="text-xs text-slate-500 dark:text-slate-400"><i class="fa-brands fa-android text-green-500 mr-1"></i> Xiaomi</p>
                     </div>
-                    <span class="text-xs px-3 py-1.5 rounded-full border font-medium tracking-wide" id="badge-dev1">Daily Device</span>
+                    <span class="text-xs px-3 py-1.5 rounded-full border bg-cyan-50 dark:bg-cyan-950 text-cyan-700 dark:text-cyan-300 border-cyan-200 dark:border-cyan-800/50 font-medium tracking-wide">Daily Device</span>
                 </div>
                 
                 <div class="space-y-3">
-                    <div class="spec-row rounded-lg p-3 flex justify-between items-center border">
+                    <div class="rounded-lg p-3 flex justify-between items-center bg-slate-50 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-700/50 text-slate-700 dark:text-slate-200">
                         <span class="text-sm"><i class="fa-solid fa-fingerprint mr-2 text-cyan-500"></i>Codename</span>
-                        <span class="font-mono text-sm px-2 py-0.5 rounded code-badge">angelica</span>
+                        <span class="font-mono text-sm px-2 py-0.5 rounded bg-slate-200 dark:bg-cyan-950 text-slate-800 dark:text-cyan-300">angelica</span>
                     </div>
-                    <div class="spec-row rounded-lg p-3 flex justify-between items-center border">
+                    <div class="rounded-lg p-3 flex justify-between items-center bg-slate-50 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-700/50 text-slate-700 dark:text-slate-200">
                         <span class="text-sm"><i class="fa-solid fa-microchip mr-2 text-cyan-500"></i>Chipset</span>
                         <span class="font-semibold text-sm">MediaTek Helio G35</span>
                     </div>
                     
-                    <!-- GPU DENGAN ILUSTRASI SVG KUSTOM -->
-                    <div class="spec-row rounded-lg p-3 flex justify-between items-center border">
+                    <!-- GPU -->
+                    <div class="rounded-lg p-3 flex justify-between items-center bg-slate-50 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-700/50 text-slate-700 dark:text-slate-200">
                         <span class="text-sm flex items-center">
                             <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 mr-2 text-cyan-500" viewBox="0 0 24 24" fill="currentColor">
                                 <path d="M21,2H3C1.9,2,1,2.9,1,4v12c0,1.1,0.9,2,2,2h2v4h2v-4h2v4h2v-4h2v4h2v-4h2v4h2v-4h2c1.1,0,2-0.9,2-2V4C23,2.9,22.1,2,21,2z M21,14H3V4h18V14z"/>
@@ -102,29 +107,29 @@
                         <span class="font-semibold text-sm">PowerVR GE8320</span>
                     </div>
                     
-                    <div class="spec-row rounded-lg p-3 flex justify-between items-center border">
+                    <div class="rounded-lg p-3 flex justify-between items-center bg-slate-50 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-700/50 text-slate-700 dark:text-slate-200">
                         <span class="text-sm"><i class="fa-solid fa-compact-disc mr-2 text-cyan-500"></i>Android Custom</span>
                         <span class="font-semibold text-sm">crDroid 12.5</span>
                     </div>
                     
-                    <!-- ANDROID DENGAN LOGO ANDROID -->
-                    <div class="spec-row rounded-lg p-3 flex justify-between items-center border">
+                    <!-- ANDROID -->
+                    <div class="rounded-lg p-3 flex justify-between items-center bg-slate-50 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-700/50 text-slate-700 dark:text-slate-200">
                         <span class="text-sm"><i class="fa-brands fa-android mr-2 text-green-500"></i>Android</span>
                         <span class="font-semibold text-sm">16 qpr1</span>
                     </div>
                     
-                    <div class="spec-row rounded-lg p-3 flex justify-between items-center border">
+                    <div class="rounded-lg p-3 flex justify-between items-center bg-slate-50 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-700/50 text-slate-700 dark:text-slate-200">
                         <span class="text-sm"><i class="fa-solid fa-hashtag mr-2 text-green-500"></i>Root</span>
                         <span class="font-semibold text-green-500 text-sm">Nadeko SU v30020</span>
                     </div>
                     
-                    <!-- KERNEL DENGAN LOGO LINUX -->
-                    <div class="spec-row rounded-lg p-3 flex justify-between items-center border">
+                    <!-- KERNEL -->
+                    <div class="rounded-lg p-3 flex justify-between items-center bg-slate-50 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-700/50 text-slate-700 dark:text-slate-200">
                         <span class="text-sm"><i class="fa-brands fa-linux mr-2 text-cyan-500"></i>Kernel</span>
                         <span class="font-semibold text-xs text-right leading-tight max-w-[65%]">4.19.275-Ridz_angelica OC Kernel hililuo G35</span>
                     </div>
                     
-                    <div class="spec-row rounded-lg p-3 flex justify-between items-center border">
+                    <div class="rounded-lg p-3 flex justify-between items-center bg-slate-50 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-700/50 text-slate-700 dark:text-slate-200">
                         <span class="text-sm"><i class="fa-solid fa-memory mr-2 text-cyan-500"></i>Storage</span>
                         <span class="font-semibold text-sm">4 GB / 64 GB</span>
                     </div>
@@ -132,27 +137,27 @@
             </div>
 
             <!-- Device 2: Redmi Note 5A Prime -->
-            <div class="glass-card p-7 rounded-2xl hover:-translate-y-1 transition duration-300">
+            <div class="glass-card p-7 rounded-2xl bg-white/70 dark:bg-slate-800/60 border border-slate-200/80 dark:border-white/10 shadow-lg dark:shadow-xl hover:-translate-y-1 transition duration-300 text-slate-900 dark:text-slate-100">
                 <div class="flex justify-between items-start mb-6">
                     <div>
                         <h3 class="text-2xl font-bold mb-1">Redmi Note 5A Prime</h3>
-                        <p class="text-xs text-slate-400"><i class="fa-brands fa-android text-green-500 mr-1"></i> Xiaomi</p>
+                        <p class="text-xs text-slate-500 dark:text-slate-400"><i class="fa-brands fa-android text-green-500 mr-1"></i> Xiaomi</p>
                     </div>
-                    <span class="text-xs px-3 py-1.5 rounded-full border font-medium tracking-wide" id="badge-dev2">Secondary Device</span>
+                    <span class="text-xs px-3 py-1.5 rounded-full border bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border-slate-300 dark:border-slate-600/50 font-medium tracking-wide">Secondary Device</span>
                 </div>
                 
                 <div class="space-y-3">
-                    <div class="spec-row rounded-lg p-3 flex justify-between items-center border">
+                    <div class="rounded-lg p-3 flex justify-between items-center bg-slate-50 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-700/50 text-slate-700 dark:text-slate-200">
                         <span class="text-sm"><i class="fa-solid fa-fingerprint mr-2 text-blue-500"></i>Codename</span>
-                        <span class="font-mono text-sm px-2 py-0.5 rounded code-badge">ugg</span>
+                        <span class="font-mono text-sm px-2 py-0.5 rounded bg-slate-200 dark:bg-blue-900/30 text-slate-800 dark:text-blue-300">ugg</span>
                     </div>
-                    <div class="spec-row rounded-lg p-3 flex justify-between items-center border">
+                    <div class="rounded-lg p-3 flex justify-between items-center bg-slate-50 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-700/50 text-slate-700 dark:text-slate-200">
                         <span class="text-sm"><i class="fa-solid fa-microchip mr-2 text-blue-500"></i>Chipset</span>
                         <span class="font-semibold text-sm">Snapdragon 435</span>
                     </div>
                     
-                    <!-- GPU DENGAN ILUSTRASI SVG KUSTOM -->
-                    <div class="spec-row rounded-lg p-3 flex justify-between items-center border">
+                    <!-- GPU -->
+                    <div class="rounded-lg p-3 flex justify-between items-center bg-slate-50 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-700/50 text-slate-700 dark:text-slate-200">
                         <span class="text-sm flex items-center">
                             <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 mr-2 text-blue-500" viewBox="0 0 24 24" fill="currentColor">
                                 <path d="M21,2H3C1.9,2,1,2.9,1,4v12c0,1.1,0.9,2,2,2h2v4h2v-4h2v4h2v-4h2v4h2v-4h2v4h2v-4h2c1.1,0,2-0.9,2-2V4C23,2.9,22.1,2,21,2z M21,14H3V4h18V14z"/>
@@ -162,29 +167,29 @@
                         <span class="font-semibold text-sm">Adreno 505</span>
                     </div>
                     
-                    <div class="spec-row rounded-lg p-3 flex justify-between items-center border">
+                    <div class="rounded-lg p-3 flex justify-between items-center bg-slate-50 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-700/50 text-slate-700 dark:text-slate-200">
                         <span class="text-sm"><i class="fa-solid fa-compact-disc mr-2 text-blue-500"></i>Android Custom</span>
                         <span class="font-semibold text-sm">Infinity 3.5</span>
                     </div>
                     
-                    <!-- ANDROID DENGAN LOGO ANDROID -->
-                    <div class="spec-row rounded-lg p-3 flex justify-between items-center border">
+                    <!-- ANDROID -->
+                    <div class="rounded-lg p-3 flex justify-between items-center bg-slate-50 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-700/50 text-slate-700 dark:text-slate-200">
                         <span class="text-sm"><i class="fa-brands fa-android mr-2 text-green-500"></i>Android</span>
                         <span class="font-semibold text-sm">16 Qpr0</span>
                     </div>
                     
-                    <div class="spec-row rounded-lg p-3 flex justify-between items-center border">
+                    <div class="rounded-lg p-3 flex justify-between items-center bg-slate-50 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-700/50 text-slate-700 dark:text-slate-200">
                         <span class="text-sm"><i class="fa-solid fa-hashtag mr-2 text-green-500"></i>Root</span>
                         <span class="font-semibold text-green-500 text-sm">KernelSU v32546-2</span>
                     </div>
                     
-                    <!-- KERNEL DENGAN LOGO LINUX -->
-                    <div class="spec-row rounded-lg p-3 flex justify-between items-center border">
+                    <!-- KERNEL -->
+                    <div class="rounded-lg p-3 flex justify-between items-center bg-slate-50 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-700/50 text-slate-700 dark:text-slate-200">
                         <span class="text-sm"><i class="fa-brands fa-linux mr-2 text-blue-500"></i>Kernel</span>
                         <span class="font-semibold text-xs text-right leading-tight max-w-[65%]">4.19.325 Mystrile-Mi8937 oc</span>
                     </div>
                     
-                    <div class="spec-row rounded-lg p-3 flex justify-between items-center border">
+                    <div class="rounded-lg p-3 flex justify-between items-center bg-slate-50 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-700/50 text-slate-700 dark:text-slate-200">
                         <span class="text-sm"><i class="fa-solid fa-memory mr-2 text-blue-500"></i>Storage</span>
                         <span class="font-semibold text-sm">3 GB / 32 GB</span>
                     </div>
@@ -193,105 +198,62 @@
         </div>
     </main>
 
-    <footer class="mt-16 mb-6 text-sm z-10 text-center" id="footer-text">
+    <footer class="mt-16 mb-6 text-slate-500 text-sm z-10 text-center">
         <p>&copy; 2026 ridz_angelica.ugg. Root and custom rom.</p>
     </footer>
 
-    <!-- Skrip Tema Otomatis Jam Klien + Tombol Manual -->
+    <!-- Skrip Tema Singkat & Anti-Error -->
     <script>
-        function setTheme(mode) {
-            const body = document.getElementById('page-body');
-            const avatar = document.getElementById('profile-avatar');
-            const mainTitle = document.getElementById('main-title');
-            const subTitle = document.getElementById('sub-title');
-            const themeBtn = document.getElementById('theme-toggle-btn');
-            const themeIcon = document.getElementById('theme-icon');
-            const themeText = document.getElementById('theme-text');
-            const glow1 = document.getElementById('glow-1');
-            const glow2 = document.getElementById('glow-2');
-            const dividerLines = document.querySelectorAll('.divider-line');
-            const socialBtns = document.querySelectorAll('.social-btn');
-            const ghIcon = document.getElementById('gh-icon');
-            const cards = document.querySelectorAll('.glass-card');
-            const specRows = document.querySelectorAll('.spec-row');
-            const codeBadges = document.querySelectorAll('.code-badge');
-            const badgeDev1 = document.getElementById('badge-dev1');
-            const badgeDev2 = document.getElementById('badge-dev2');
-            const footerText = document.getElementById('footer-text');
-
-            if (mode === 'light') {
-                // --- LIGHT MODE ---
-                body.style.backgroundColor = "#f8fafc";
-                body.style.color = "#0f172a";
-                
-                glow1.className = "absolute top-[-10%] left-[-10%] w-96 h-96 bg-cyan-300 rounded-full mix-blend-multiply filter blur-[128px] opacity-40 -z-10 transition-all duration-500";
-                glow2.className = "absolute bottom-[-10%] right-[-10%] w-96 h-96 bg-blue-300 rounded-full mix-blend-multiply filter blur-[128px] opacity-40 -z-10 transition-all duration-500";
-
-                themeBtn.className = "absolute top-6 right-6 z-20 flex items-center gap-2 px-4 py-2 rounded-full border border-amber-300 bg-amber-50 text-amber-800 shadow-sm text-xs font-medium transition transform hover:scale-105 cursor-pointer";
-                themeIcon.className = "fa-solid fa-sun text-amber-500";
-                themeText.innerText = "Terang";
-
-                avatar.className = "w-28 h-28 bg-gradient-to-tr from-cyan-500 to-blue-600 rounded-full mx-auto mb-5 flex items-center justify-center text-4xl font-bold shadow-md border-4 border-white text-white transition-all duration-500";
-                mainTitle.className = "text-3xl font-bold tracking-wider mb-2 text-slate-900";
-                subTitle.className = "text-slate-600 mb-8 text-sm md:text-base";
-
-                socialBtns.forEach(btn => {
-                    btn.className = "social-btn flex items-center gap-2 bg-white/80 hover:bg-slate-100 transition duration-300 px-5 py-2.5 rounded-full text-sm font-medium border border-slate-200 shadow-sm text-slate-700";
-                });
-                ghIcon.className = "fa-brands fa-github text-slate-900 text-lg";
-
-                dividerLines.forEach(line => line.className = "h-[1px] w-16 md:w-24 bg-slate-300 divider-line");
-
-                cards.forEach(card => {
-                    card.className = "glass-card p-7 rounded-2xl bg-white/70 border border-slate-200/80 shadow-lg hover:-translate-y-1 transition duration-300 text-slate-900";
-                });
-
-                specRows.forEach(row => {
-                    row.className = "spec-row rounded-lg p-3 flex justify-between items-center bg-slate-50 border border-slate-200/60 text-slate-700";
-                });
-
-                codeBadges.forEach(badge => {
-                    badge.className = "font-mono text-sm px-2 py-0.5 rounded bg-slate-200 text-slate-800 code-badge";
-                });
-
-                badgeDev1.className = "text-xs px-3 py-1.5 rounded-full border bg-cyan-50 text-cyan-700 border-cyan-200 font-medium tracking-wide";
-                badgeDev2.className = "text-xs px-3 py-1.5 rounded-full border bg-slate-100 text-slate-700 border-slate-300 font-medium tracking-wide";
-                footerText.className = "mt-16 mb-6 text-slate-500 text-sm z-10 text-center";
-
-                localStorage.setItem('user_theme', 'light');
+        function updateBtn(theme) {
+            const icon = document.getElementById('theme-icon');
+            const text = document.getElementById('theme-text');
+            if (theme === 'dark') {
+                icon.className = "fa-solid fa-moon text-indigo-400";
+                text.innerText = "Gelap";
             } else {
-                // --- DARK MODE ---
-                body.style.backgroundColor = "#0f172a";
-                body.style.color = "#f8fafc";
+                icon.className = "fa-solid fa-sun text-amber-500";
+                text.innerText = "Terang";
+            }
+        }
 
-                glow1.className = "absolute top-[-10%] left-[-10%] w-96 h-96 bg-cyan-600 rounded-full mix-blend-multiply filter blur-[128px] opacity-20 -z-10 transition-all duration-500";
-                glow2.className = "absolute bottom-[-10%] right-[-10%] w-96 h-96 bg-blue-600 rounded-full mix-blend-multiply filter blur-[128px] opacity-20 -z-10 transition-all duration-500";
+        function toggleTheme() {
+            const html = document.documentElement;
+            if (html.classList.contains('dark')) {
+                html.classList.remove('dark');
+                localStorage.setItem('user_theme', 'light');
+                updateBtn('light');
+            } else {
+                html.classList.add('dark');
+                localStorage.setItem('user_theme', 'dark');
+                updateBtn('dark');
+            }
+        }
 
-                themeBtn.className = "absolute top-6 right-6 z-20 flex items-center gap-2 px-4 py-2 rounded-full border border-indigo-800 bg-indigo-950/80 text-indigo-200 shadow-sm text-xs font-medium backdrop-blur-md transition transform hover:scale-105 cursor-pointer";
-                themeIcon.className = "fa-solid fa-moon text-indigo-400";
-                themeText.innerText = "Gelap";
+        window.onload = function() {
+            const savedTheme = localStorage.getItem('user_theme');
+            const currentHour = new Date().getHours();
+            let themeToApply = 'dark'; // Default awal
 
-                avatar.className = "w-28 h-28 bg-gradient-to-tr from-cyan-500 to-blue-600 rounded-full mx-auto mb-5 flex items-center justify-center text-4xl font-bold shadow-[0_0_25px_rgba(6,182,212,0.4)] border-4 border-slate-800 text-white transition-all duration-500";
-                mainTitle.className = "text-3xl font-bold tracking-wider mb-2 text-white";
-                subTitle.className = "text-slate-400 mb-8 text-sm md:text-base";
+            // Cek jika pengguna pernah memilih, jika tidak ikuti jam
+            if (savedTheme) {
+                themeToApply = savedTheme;
+            } else {
+                // Jam 06:00 pagi sampai 17:59 sore = Terang
+                if (currentHour >= 6 && currentHour < 18) {
+                    themeToApply = 'light';
+                } else {
+                    themeToApply = 'dark';
+                }
+            }
 
-                socialBtns.forEach(btn => {
-                    btn.className = "social-btn flex items-center gap-2 bg-slate-800/80 hover:bg-slate-700 transition duration-300 px-5 py-2.5 rounded-full text-sm font-medium border border-slate-700 text-slate-200 shadow-sm";
-                });
-                ghIcon.className = "fa-brands fa-github text-white text-lg";
-
-                dividerLines.forEach(line => line.className = "h-[1px] w-16 md:w-24 bg-slate-700 divider-line");
-
-                cards.forEach(card => {
-                    card.className = "glass-card p-7 rounded-2xl bg-slate-800/60 border border-white/10 shadow-xl hover:-translate-y-1 transition duration-300 text-slate-100";
-                });
-
-                specRows.forEach(row => {
-                    row.className = "spec-row rounded-lg p-3 flex justify-between items-center bg-slate-800/50 border border-slate-700/50 text-slate-200";
-                });
-
-                codeBadges.forEach(badge => {
-                    badge.className = "font-mono text-sm px-2 py-0.5 rounded bg-cyan-950 text-cyan-300 code-badge";
-                });
-
-                badgeDev1.className = "text-xs px-3 py-1.5 rounded-full border bg-cyan-950 text-cyan-300 bo
+            // Terapkan ke HTML
+            if (themeToApply === 'dark') {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+            updateBtn(themeToApply);
+        }
+    </script>
+</body>
+</html>
