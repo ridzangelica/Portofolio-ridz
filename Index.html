@@ -27,294 +27,278 @@
         }
     </style>
 </head>
-<body class="bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-slate-50 transition-colors duration-500 min-h-screen flex flex-col items-center p-6 relative overflow-x-hidden">
+<body class="bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-slate-50 transition-colors duration-500 min-h-screen flex flex-col items-center p-4 md:p-6 relative overflow-x-hidden">
     
     <!-- Background Glow Effect Dinamis Terang/Gelap -->
     <div class="absolute top-[-10%] left-[-10%] w-96 h-96 bg-cyan-300 dark:bg-cyan-600 rounded-full mix-blend-multiply filter blur-[128px] opacity-40 dark:opacity-20 -z-10 transition-all duration-500"></div>
     <div class="absolute bottom-[-10%] right-[-10%] w-96 h-96 bg-blue-300 dark:bg-blue-600 rounded-full mix-blend-multiply filter blur-[128px] opacity-40 dark:opacity-20 -z-10 transition-all duration-500"></div>
 
     <!-- Tombol Ganti Tema (Pojok Kanan Atas) -->
-    <button onclick="toggleTheme()" class="absolute top-6 right-6 z-20 flex items-center gap-2 px-4 py-2 rounded-full border border-amber-300 dark:border-indigo-800 bg-amber-50 dark:bg-indigo-950/80 text-amber-800 dark:text-indigo-200 shadow-sm text-xs font-medium transition transform hover:scale-105 cursor-pointer">
+    <button onclick="toggleTheme()" class="absolute top-4 right-4 md:top-6 md:right-6 z-20 flex items-center gap-2 px-3 py-1.5 md:px-4 md:py-2 rounded-full border border-amber-300 dark:border-indigo-800 bg-amber-50 dark:bg-indigo-950/80 text-amber-800 dark:text-indigo-200 shadow-sm text-[10px] md:text-xs font-medium transition transform hover:scale-105 cursor-pointer">
         <i id="theme-icon" class="fa-solid fa-moon"></i> <span id="theme-text">Mode</span>
     </button>
 
     <!-- Header / Profile Section -->
-    <header class="text-center mt-12 mb-14 w-full max-w-3xl">
-        <div class="w-28 h-28 bg-gradient-to-tr from-cyan-500 to-blue-600 rounded-full mx-auto mb-5 flex items-center justify-center text-4xl font-bold shadow-md dark:shadow-[0_0_25px_rgba(6,182,212,0.4)] border-4 border-white dark:border-slate-800 text-white transition-all duration-500">
+    <header class="text-center mt-14 mb-10 md:mb-14 w-full max-w-3xl">
+        <div class="w-24 h-24 md:w-28 md:h-28 bg-gradient-to-tr from-cyan-500 to-blue-600 rounded-full mx-auto mb-4 flex items-center justify-center text-3xl md:text-4xl font-bold shadow-md dark:shadow-[0_0_25px_rgba(6,182,212,0.4)] border-4 border-white dark:border-slate-800 text-white transition-all duration-500">
             R
         </div>
-        <h1 class="text-3xl font-bold tracking-wider mb-2 text-slate-900 dark:text-white">ridz_angelica.ugg</h1>
-        <p class="text-slate-600 dark:text-slate-400 mb-8 text-sm md:text-base">explorasi custom rom,makai mbaking di hp root</p>
+        <h1 class="text-2xl md:text-3xl font-bold tracking-wider mb-2 text-slate-900 dark:text-white">ridz_angelica.ugg</h1>
+        <p class="text-slate-600 dark:text-slate-400 mb-6 md:mb-8 text-xs md:text-base px-4">explorasi custom rom,makai mbaking di hp root</p>
         
         <!-- Social Media Buttons -->
-        <div class="flex flex-wrap justify-center gap-3">
-            <a href="https://tiktok.com/@ridz_coretexa53" target="_blank" class="flex items-center gap-2 bg-white/80 dark:bg-slate-800/80 hover:bg-slate-100 dark:hover:bg-slate-700 transition duration-300 px-5 py-2.5 rounded-full text-sm font-medium border border-slate-200 dark:border-slate-700 shadow-sm text-slate-700 dark:text-slate-200">
-                <i class="fa-brands fa-tiktok text-pink-500 text-lg"></i> TikTok Saya
+        <div class="flex flex-wrap justify-center gap-2 md:gap-3 px-2">
+            <a href="https://tiktok.com/@ridz_coretexa53" target="_blank" class="flex items-center gap-1.5 md:gap-2 bg-white/80 dark:bg-slate-800/80 hover:bg-slate-100 dark:hover:bg-slate-700 transition duration-300 px-3 py-2 md:px-5 md:py-2.5 rounded-full text-[11px] md:text-sm font-medium border border-slate-200 dark:border-slate-700 shadow-sm text-slate-700 dark:text-slate-200">
+                <i class="fa-brands fa-tiktok text-pink-500 text-sm md:text-lg"></i> TikTok Saya
             </a>
-            <a href="https://t.me/ridz_angelicaugg" target="_blank" class="flex items-center gap-2 bg-white/80 dark:bg-slate-800/80 hover:bg-slate-100 dark:hover:bg-slate-700 transition duration-300 px-5 py-2.5 rounded-full text-sm font-medium border border-slate-200 dark:border-slate-700 shadow-sm text-slate-700 dark:text-slate-200">
-                <i class="fa-brands fa-telegram text-blue-500 text-lg"></i> Telegram Saya
+            <a href="https://t.me/ridz_angelicaugg" target="_blank" class="flex items-center gap-1.5 md:gap-2 bg-white/80 dark:bg-slate-800/80 hover:bg-slate-100 dark:hover:bg-slate-700 transition duration-300 px-3 py-2 md:px-5 md:py-2.5 rounded-full text-[11px] md:text-sm font-medium border border-slate-200 dark:border-slate-700 shadow-sm text-slate-700 dark:text-slate-200">
+                <i class="fa-brands fa-telegram text-blue-500 text-sm md:text-lg"></i> Telegram Saya
             </a>
-            <a href="https://t.me/gosth_blossom" target="_blank" class="flex items-center gap-2 bg-white/80 dark:bg-slate-800/80 hover:bg-slate-100 dark:hover:bg-slate-700 transition duration-300 px-5 py-2.5 rounded-full text-sm font-medium border border-slate-200 dark:border-slate-700 shadow-sm text-slate-700 dark:text-slate-200">
-                <i class="fa-solid fa-bullhorn text-blue-500 text-lg"></i> Channel Saya
+            <a href="https://t.me/gosth_blossom" target="_blank" class="flex items-center gap-1.5 md:gap-2 bg-white/80 dark:bg-slate-800/80 hover:bg-slate-100 dark:hover:bg-slate-700 transition duration-300 px-3 py-2 md:px-5 md:py-2.5 rounded-full text-[11px] md:text-sm font-medium border border-slate-200 dark:border-slate-700 shadow-sm text-slate-700 dark:text-slate-200">
+                <i class="fa-solid fa-bullhorn text-blue-500 text-sm md:text-lg"></i> Channel Saya
             </a>
-            <a href="https://t.me/+bmLwbpznqeVmOGY1" target="_blank" class="flex items-center gap-2 bg-white/80 dark:bg-slate-800/80 hover:bg-slate-100 dark:hover:bg-slate-700 transition duration-300 px-5 py-2.5 rounded-full text-sm font-medium border border-slate-200 dark:border-slate-700 shadow-sm text-slate-700 dark:text-slate-200">
-                <i class="fa-solid fa-users text-blue-500 text-lg"></i> Grup Telegram
+            <a href="https://t.me/+bmLwbpznqeVmOGY1" target="_blank" class="flex items-center gap-1.5 md:gap-2 bg-white/80 dark:bg-slate-800/80 hover:bg-slate-100 dark:hover:bg-slate-700 transition duration-300 px-3 py-2 md:px-5 md:py-2.5 rounded-full text-[11px] md:text-sm font-medium border border-slate-200 dark:border-slate-700 shadow-sm text-slate-700 dark:text-slate-200">
+                <i class="fa-solid fa-users text-blue-500 text-sm md:text-lg"></i> Grup Telegram
             </a>
-            <a href="https://github.com/ridzangelica" target="_blank" class="flex items-center gap-2 bg-white/80 dark:bg-slate-800/80 hover:bg-slate-100 dark:hover:bg-slate-700 transition duration-300 px-5 py-2.5 rounded-full text-sm font-medium border border-slate-200 dark:border-slate-700 shadow-sm text-slate-700 dark:text-slate-200">
-                <i class="fa-brands fa-github text-slate-900 dark:text-white text-lg"></i> GitHub Saya
+            <a href="https://github.com/ridzangelica" target="_blank" class="flex items-center gap-1.5 md:gap-2 bg-white/80 dark:bg-slate-800/80 hover:bg-slate-100 dark:hover:bg-slate-700 transition duration-300 px-3 py-2 md:px-5 md:py-2.5 rounded-full text-[11px] md:text-sm font-medium border border-slate-200 dark:border-slate-700 shadow-sm text-slate-700 dark:text-slate-200">
+                <i class="fa-brands fa-github text-slate-900 dark:text-white text-sm md:text-lg"></i> GitHub Saya
             </a>
         </div>
     </header>
 
     <!-- Devices List Section -->
     <main class="w-full max-w-5xl z-10">
-        <div class="flex items-center justify-center gap-3 mb-8">
-            <div class="h-[1px] w-16 md:w-24 bg-slate-300 dark:bg-slate-700"></div>
-            <h2 class="text-lg md:text-xl font-semibold text-center text-slate-900 dark:text-slate-200"><i class="fa-solid fa-mobile-screen-button mr-2 text-cyan-500"></i>Perangkat Saya</h2>
-            <div class="h-[1px] w-16 md:w-24 bg-slate-300 dark:bg-slate-700"></div>
+        <div class="flex items-center justify-center gap-3 mb-6 md:mb-8">
+            <div class="h-[1px] w-12 md:w-24 bg-slate-300 dark:bg-slate-700"></div>
+            <h2 class="text-base md:text-xl font-semibold text-center text-slate-900 dark:text-slate-200 whitespace-nowrap"><i class="fa-solid fa-mobile-screen-button mr-2 text-cyan-500"></i>Perangkat Saya</h2>
+            <div class="h-[1px] w-12 md:w-24 bg-slate-300 dark:bg-slate-700"></div>
         </div>
         
-        <!-- Grid Diubah Jadi 2 Kolom untuk Semua Baris -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Grid Dipaksa 2 Kolom (kiri-kanan) di Semua Ukuran Layar -->
+        <div class="grid grid-cols-2 gap-3 md:gap-6">
             
             <!-- Baris 1: HP Kiri (Redmi 9C) -->
-            <div class="glass-card p-7 rounded-2xl bg-white/70 dark:bg-slate-800/60 border border-slate-200/80 dark:border-white/10 shadow-lg dark:shadow-xl hover:-translate-y-1 transition duration-300 text-slate-900 dark:text-slate-100">
-                <div class="flex justify-between items-start mb-6">
+            <div class="glass-card p-4 md:p-7 rounded-xl md:rounded-2xl bg-white/70 dark:bg-slate-800/60 border border-slate-200/80 dark:border-white/10 shadow-lg dark:shadow-xl hover:-translate-y-1 transition duration-300 text-slate-900 dark:text-slate-100 flex flex-col">
+                <div class="flex flex-col lg:flex-row lg:justify-between items-start mb-4 md:mb-6 gap-2">
                     <div>
-                        <h3 class="text-2xl font-bold mb-1">Redmi 9C</h3>
-                        <p class="text-xs text-slate-500 dark:text-slate-400"><i class="fa-brands fa-android text-green-500 mr-1"></i> Xiaomi</p>
+                        <h3 class="text-sm md:text-2xl font-bold mb-0.5 md:mb-1 leading-tight">Redmi 9C</h3>
+                        <p class="text-[9px] md:text-xs text-slate-500 dark:text-slate-400"><i class="fa-brands fa-android text-green-500 mr-1"></i> Xiaomi</p>
                     </div>
-                    <span class="text-xs px-3 py-1.5 rounded-full border bg-cyan-50 dark:bg-cyan-950 text-cyan-700 dark:text-cyan-300 border-cyan-200 dark:border-cyan-800/50 font-medium tracking-wide">Daily Device</span>
+                    <span class="text-[9px] md:text-xs px-2 py-1 md:px-3 md:py-1.5 rounded-full border bg-cyan-50 dark:bg-cyan-950 text-cyan-700 dark:text-cyan-300 border-cyan-200 dark:border-cyan-800/50 font-medium tracking-wide">Daily Device</span>
                 </div>
                 
-                <div class="space-y-3">
-                    <div class="rounded-lg p-3 flex justify-between items-center bg-slate-50 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-700/50 text-slate-700 dark:text-slate-200">
-                        <span class="text-sm"><i class="fa-solid fa-fingerprint mr-2 text-cyan-500"></i>Codename</span>
-                        <span class="font-mono text-sm px-2 py-0.5 rounded bg-slate-200 dark:bg-cyan-950 text-slate-800 dark:text-cyan-300">angelica</span>
+                <div class="space-y-2 md:space-y-3 flex-grow">
+                    <!-- Format Item: flex-col untuk HP, flex-row untuk PC/Tablet -->
+                    <div class="rounded-md md:rounded-lg p-2 md:p-3 flex flex-col lg:flex-row lg:justify-between items-start lg:items-center bg-slate-50 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-700/50 text-slate-700 dark:text-slate-200 gap-1 md:gap-2">
+                        <span class="text-[10px] md:text-sm flex items-center whitespace-nowrap"><i class="fa-solid fa-fingerprint mr-1.5 md:mr-2 text-cyan-500 w-3 md:w-4 text-center"></i>Codename</span>
+                        <span class="font-mono text-[10px] md:text-sm px-1.5 py-0.5 rounded bg-slate-200 dark:bg-cyan-950 text-slate-800 dark:text-cyan-300">angelica</span>
                     </div>
-                    <div class="rounded-lg p-3 flex justify-between items-center bg-slate-50 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-700/50 text-slate-700 dark:text-slate-200">
-                        <span class="text-sm"><i class="fa-solid fa-microchip mr-2 text-cyan-500"></i>Chipset</span>
-                        <span class="font-semibold text-sm">MediaTek Helio G35</span>
+                    <div class="rounded-md md:rounded-lg p-2 md:p-3 flex flex-col lg:flex-row lg:justify-between items-start lg:items-center bg-slate-50 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-700/50 text-slate-700 dark:text-slate-200 gap-1 md:gap-2">
+                        <span class="text-[10px] md:text-sm flex items-center whitespace-nowrap"><i class="fa-solid fa-microchip mr-1.5 md:mr-2 text-cyan-500 w-3 md:w-4 text-center"></i>Chipset</span>
+                        <span class="font-semibold text-[11px] md:text-sm text-left lg:text-right leading-snug">MediaTek Helio G35</span>
                     </div>
-                    
-                    <div class="rounded-lg p-3 flex justify-between items-center bg-slate-50 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-700/50 text-slate-700 dark:text-slate-200">
-                        <span class="text-sm flex items-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 mr-2 text-cyan-500" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M21,2H3C1.9,2,1,2.9,1,4v12c0,1.1,0.9,2,2,2h2v4h2v-4h2v4h2v-4h2v4h2v-4h2v4h2v-4h2c1.1,0,2-0.9,2-2V4C23,2.9,22.1,2,21,2z M21,14H3V4h18V14z"/>
-                                <circle cx="8" cy="9" r="3"/><circle cx="16" cy="9" r="3"/>
-                            </svg>GPU
+                    <div class="rounded-md md:rounded-lg p-2 md:p-3 flex flex-col lg:flex-row lg:justify-between items-start lg:items-center bg-slate-50 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-700/50 text-slate-700 dark:text-slate-200 gap-1 md:gap-2">
+                        <span class="text-[10px] md:text-sm flex items-center whitespace-nowrap">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3 md:w-4 md:h-4 mr-1.5 md:mr-2 text-cyan-500" viewBox="0 0 24 24" fill="currentColor"><path d="M21,2H3C1.9,2,1,2.9,1,4v12c0,1.1,0.9,2,2,2h2v4h2v-4h2v4h2v-4h2v4h2v-4h2v4h2v-4h2c1.1,0,2-0.9,2-2V4C23,2.9,22.1,2,21,2z M21,14H3V4h18V14z"/><circle cx="8" cy="9" r="3"/><circle cx="16" cy="9" r="3"/></svg>GPU
                         </span>
-                        <span class="font-semibold text-sm">PowerVR GE8320</span>
+                        <span class="font-semibold text-[11px] md:text-sm text-left lg:text-right leading-snug">PowerVR GE8320</span>
                     </div>
-                    
-                    <div class="rounded-lg p-3 flex justify-between items-center bg-slate-50 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-700/50 text-slate-700 dark:text-slate-200">
-                        <span class="text-sm"><i class="fa-solid fa-compact-disc mr-2 text-cyan-500"></i>Android Custom</span>
-                        <span class="font-semibold text-sm">crDroid 12.5</span>
+                    <div class="rounded-md md:rounded-lg p-2 md:p-3 flex flex-col lg:flex-row lg:justify-between items-start lg:items-center bg-slate-50 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-700/50 text-slate-700 dark:text-slate-200 gap-1 md:gap-2">
+                        <span class="text-[10px] md:text-sm flex items-center whitespace-nowrap"><i class="fa-solid fa-compact-disc mr-1.5 md:mr-2 text-cyan-500 w-3 md:w-4 text-center"></i>ROM</span>
+                        <span class="font-semibold text-[11px] md:text-sm text-left lg:text-right leading-snug">crDroid 12.5</span>
                     </div>
-                    
-                    <div class="rounded-lg p-3 flex justify-between items-center bg-slate-50 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-700/50 text-slate-700 dark:text-slate-200">
-                        <span class="text-sm"><i class="fa-brands fa-android mr-2 text-green-500"></i>Android</span>
-                        <span class="font-semibold text-sm">16 qpr1</span>
+                    <div class="rounded-md md:rounded-lg p-2 md:p-3 flex flex-col lg:flex-row lg:justify-between items-start lg:items-center bg-slate-50 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-700/50 text-slate-700 dark:text-slate-200 gap-1 md:gap-2">
+                        <span class="text-[10px] md:text-sm flex items-center whitespace-nowrap"><i class="fa-brands fa-android mr-1.5 md:mr-2 text-green-500 w-3 md:w-4 text-center"></i>Android</span>
+                        <span class="font-semibold text-[11px] md:text-sm text-left lg:text-right leading-snug">16 qpr1</span>
                     </div>
-                    
-                    <div class="rounded-lg p-3 flex justify-between items-center bg-slate-50 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-700/50 text-slate-700 dark:text-slate-200">
-                        <span class="text-sm"><i class="fa-solid fa-hashtag mr-2 text-green-500"></i>Root</span>
-                        <span class="font-semibold text-green-500 text-sm">Nadeko SU v30020</span>
+                    <div class="rounded-md md:rounded-lg p-2 md:p-3 flex flex-col lg:flex-row lg:justify-between items-start lg:items-center bg-slate-50 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-700/50 text-slate-700 dark:text-slate-200 gap-1 md:gap-2">
+                        <span class="text-[10px] md:text-sm flex items-center whitespace-nowrap"><i class="fa-solid fa-hashtag mr-1.5 md:mr-2 text-green-500 w-3 md:w-4 text-center"></i>Root</span>
+                        <span class="font-semibold text-[11px] md:text-sm text-green-600 dark:text-green-400 text-left lg:text-right leading-snug">Nadeko SU v30020</span>
                     </div>
-                    
-                    <div class="rounded-lg p-3 flex justify-between items-center bg-slate-50 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-700/50 text-slate-700 dark:text-slate-200">
-                        <span class="text-sm"><i class="fa-brands fa-linux mr-2 text-cyan-500"></i>Kernel</span>
-                        <span class="font-semibold text-xs text-right leading-tight max-w-[65%]">4.19.275-Ridz_angelica OC Kernel hililuo G35</span>
+                    <div class="rounded-md md:rounded-lg p-2 md:p-3 flex flex-col lg:flex-row lg:justify-between items-start lg:items-center bg-slate-50 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-700/50 text-slate-700 dark:text-slate-200 gap-1 md:gap-2">
+                        <span class="text-[10px] md:text-sm flex items-center whitespace-nowrap"><i class="fa-brands fa-linux mr-1.5 md:mr-2 text-cyan-500 w-3 md:w-4 text-center"></i>Kernel</span>
+                        <span class="font-semibold text-[10px] md:text-xs text-left lg:text-right leading-snug break-words w-full">4.19.275-Ridz_angelica OC Kernel hililuo G35</span>
                     </div>
-                    
-                    <div class="rounded-lg p-3 flex justify-between items-center bg-slate-50 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-700/50 text-slate-700 dark:text-slate-200">
-                        <span class="text-sm"><i class="fa-solid fa-memory mr-2 text-cyan-500"></i>Storage</span>
-                        <span class="font-semibold text-sm">4 GB / 64 GB</span>
+                    <div class="rounded-md md:rounded-lg p-2 md:p-3 flex flex-col lg:flex-row lg:justify-between items-start lg:items-center bg-slate-50 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-700/50 text-slate-700 dark:text-slate-200 gap-1 md:gap-2">
+                        <span class="text-[10px] md:text-sm flex items-center whitespace-nowrap"><i class="fa-solid fa-memory mr-1.5 md:mr-2 text-cyan-500 w-3 md:w-4 text-center"></i>Storage</span>
+                        <span class="font-semibold text-[11px] md:text-sm text-left lg:text-right leading-snug">4 GB / 64 GB</span>
                     </div>
                 </div>
             </div>
 
             <!-- Baris 1: HP Kanan (Redmi Note 5A Prime) -->
-            <div class="glass-card p-7 rounded-2xl bg-white/70 dark:bg-slate-800/60 border border-slate-200/80 dark:border-white/10 shadow-lg dark:shadow-xl hover:-translate-y-1 transition duration-300 text-slate-900 dark:text-slate-100">
-                <div class="flex justify-between items-start mb-6">
+            <div class="glass-card p-4 md:p-7 rounded-xl md:rounded-2xl bg-white/70 dark:bg-slate-800/60 border border-slate-200/80 dark:border-white/10 shadow-lg dark:shadow-xl hover:-translate-y-1 transition duration-300 text-slate-900 dark:text-slate-100 flex flex-col">
+                <div class="flex flex-col lg:flex-row lg:justify-between items-start mb-4 md:mb-6 gap-2">
                     <div>
-                        <h3 class="text-2xl font-bold mb-1">Redmi Note 5A Prime</h3>
-                        <p class="text-xs text-slate-500 dark:text-slate-400"><i class="fa-brands fa-android text-green-500 mr-1"></i> Xiaomi</p>
+                        <h3 class="text-sm md:text-2xl font-bold mb-0.5 md:mb-1 leading-tight">Redmi Note 5A P...</h3>
+                        <p class="text-[9px] md:text-xs text-slate-500 dark:text-slate-400"><i class="fa-brands fa-android text-green-500 mr-1"></i> Xiaomi</p>
                     </div>
-                    <span class="text-xs px-3 py-1.5 rounded-full border bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border-slate-300 dark:border-slate-600/50 font-medium tracking-wide">Secondary Device</span>
+                    <span class="text-[9px] md:text-xs px-2 py-1 md:px-3 md:py-1.5 rounded-full border bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border-slate-300 dark:border-slate-600/50 font-medium tracking-wide">Sec. Device</span>
                 </div>
                 
-                <div class="space-y-3">
-                    <div class="rounded-lg p-3 flex justify-between items-center bg-slate-50 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-700/50 text-slate-700 dark:text-slate-200">
-                        <span class="text-sm"><i class="fa-solid fa-fingerprint mr-2 text-blue-500"></i>Codename</span>
-                        <span class="font-mono text-sm px-2 py-0.5 rounded bg-slate-200 dark:bg-blue-900/30 text-slate-800 dark:text-blue-300">ugg</span>
+                <div class="space-y-2 md:space-y-3 flex-grow">
+                    <div class="rounded-md md:rounded-lg p-2 md:p-3 flex flex-col lg:flex-row lg:justify-between items-start lg:items-center bg-slate-50 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-700/50 text-slate-700 dark:text-slate-200 gap-1 md:gap-2">
+                        <span class="text-[10px] md:text-sm flex items-center whitespace-nowrap"><i class="fa-solid fa-fingerprint mr-1.5 md:mr-2 text-blue-500 w-3 md:w-4 text-center"></i>Codename</span>
+                        <span class="font-mono text-[10px] md:text-sm px-1.5 py-0.5 rounded bg-slate-200 dark:bg-blue-900/30 text-slate-800 dark:text-blue-300">ugg</span>
                     </div>
-                    <div class="rounded-lg p-3 flex justify-between items-center bg-slate-50 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-700/50 text-slate-700 dark:text-slate-200">
-                        <span class="text-sm"><i class="fa-solid fa-microchip mr-2 text-blue-500"></i>Chipset</span>
-                        <span class="font-semibold text-sm">Snapdragon 435</span>
+                    <div class="rounded-md md:rounded-lg p-2 md:p-3 flex flex-col lg:flex-row lg:justify-between items-start lg:items-center bg-slate-50 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-700/50 text-slate-700 dark:text-slate-200 gap-1 md:gap-2">
+                        <span class="text-[10px] md:text-sm flex items-center whitespace-nowrap"><i class="fa-solid fa-microchip mr-1.5 md:mr-2 text-blue-500 w-3 md:w-4 text-center"></i>Chipset</span>
+                        <span class="font-semibold text-[11px] md:text-sm text-left lg:text-right leading-snug">Snapdragon 435</span>
                     </div>
-                    
-                    <div class="rounded-lg p-3 flex justify-between items-center bg-slate-50 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-700/50 text-slate-700 dark:text-slate-200">
-                        <span class="text-sm flex items-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 mr-2 text-blue-500" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M21,2H3C1.9,2,1,2.9,1,4v12c0,1.1,0.9,2,2,2h2v4h2v-4h2v4h2v-4h2v4h2v-4h2v4h2v-4h2c1.1,0,2-0.9,2-2V4C23,2.9,22.1,2,21,2z M21,14H3V4h18V14z"/>
-                                <circle cx="8" cy="9" r="3"/><circle cx="16" cy="9" r="3"/>
-                            </svg>GPU
+                    <div class="rounded-md md:rounded-lg p-2 md:p-3 flex flex-col lg:flex-row lg:justify-between items-start lg:items-center bg-slate-50 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-700/50 text-slate-700 dark:text-slate-200 gap-1 md:gap-2">
+                        <span class="text-[10px] md:text-sm flex items-center whitespace-nowrap">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3 md:w-4 md:h-4 mr-1.5 md:mr-2 text-blue-500" viewBox="0 0 24 24" fill="currentColor"><path d="M21,2H3C1.9,2,1,2.9,1,4v12c0,1.1,0.9,2,2,2h2v4h2v-4h2v4h2v-4h2v4h2v-4h2v4h2v-4h2c1.1,0,2-0.9,2-2V4C23,2.9,22.1,2,21,2z M21,14H3V4h18V14z"/><circle cx="8" cy="9" r="3"/><circle cx="16" cy="9" r="3"/></svg>GPU
                         </span>
-                        <span class="font-semibold text-sm">Adreno 505</span>
+                        <span class="font-semibold text-[11px] md:text-sm text-left lg:text-right leading-snug">Adreno 505</span>
                     </div>
-                    
-                    <div class="rounded-lg p-3 flex justify-between items-center bg-slate-50 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-700/50 text-slate-700 dark:text-slate-200">
-                        <span class="text-sm"><i class="fa-solid fa-compact-disc mr-2 text-blue-500"></i>Android Custom</span>
-                        <span class="font-semibold text-sm">Infinity 3.5</span>
+                    <div class="rounded-md md:rounded-lg p-2 md:p-3 flex flex-col lg:flex-row lg:justify-between items-start lg:items-center bg-slate-50 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-700/50 text-slate-700 dark:text-slate-200 gap-1 md:gap-2">
+                        <span class="text-[10px] md:text-sm flex items-center whitespace-nowrap"><i class="fa-solid fa-compact-disc mr-1.5 md:mr-2 text-blue-500 w-3 md:w-4 text-center"></i>ROM</span>
+                        <span class="font-semibold text-[11px] md:text-sm text-left lg:text-right leading-snug">Infinity 3.5</span>
                     </div>
-                    
-                    <div class="rounded-lg p-3 flex justify-between items-center bg-slate-50 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-700/50 text-slate-700 dark:text-slate-200">
-                        <span class="text-sm"><i class="fa-brands fa-android mr-2 text-green-500"></i>Android</span>
-                        <span class="font-semibold text-sm">16 Qpr0</span>
+                    <div class="rounded-md md:rounded-lg p-2 md:p-3 flex flex-col lg:flex-row lg:justify-between items-start lg:items-center bg-slate-50 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-700/50 text-slate-700 dark:text-slate-200 gap-1 md:gap-2">
+                        <span class="text-[10px] md:text-sm flex items-center whitespace-nowrap"><i class="fa-brands fa-android mr-1.5 md:mr-2 text-green-500 w-3 md:w-4 text-center"></i>Android</span>
+                        <span class="font-semibold text-[11px] md:text-sm text-left lg:text-right leading-snug">16 Qpr0</span>
                     </div>
-                    
-                    <div class="rounded-lg p-3 flex justify-between items-center bg-slate-50 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-700/50 text-slate-700 dark:text-slate-200">
-                        <span class="text-sm"><i class="fa-solid fa-hashtag mr-2 text-green-500"></i>Root</span>
-                        <span class="font-semibold text-green-500 text-sm">KernelSU v32546-2</span>
+                    <div class="rounded-md md:rounded-lg p-2 md:p-3 flex flex-col lg:flex-row lg:justify-between items-start lg:items-center bg-slate-50 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-700/50 text-slate-700 dark:text-slate-200 gap-1 md:gap-2">
+                        <span class="text-[10px] md:text-sm flex items-center whitespace-nowrap"><i class="fa-solid fa-hashtag mr-1.5 md:mr-2 text-green-500 w-3 md:w-4 text-center"></i>Root</span>
+                        <span class="font-semibold text-[11px] md:text-sm text-green-600 dark:text-green-400 text-left lg:text-right leading-snug">KernelSU v32546-2</span>
                     </div>
-                    
-                    <div class="rounded-lg p-3 flex justify-between items-center bg-slate-50 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-700/50 text-slate-700 dark:text-slate-200">
-                        <span class="text-sm"><i class="fa-brands fa-linux mr-2 text-blue-500"></i>Kernel</span>
-                        <span class="font-semibold text-xs text-right leading-tight max-w-[65%]">4.19.325 Mystrile-Mi8937 oc</span>
+                    <div class="rounded-md md:rounded-lg p-2 md:p-3 flex flex-col lg:flex-row lg:justify-between items-start lg:items-center bg-slate-50 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-700/50 text-slate-700 dark:text-slate-200 gap-1 md:gap-2">
+                        <span class="text-[10px] md:text-sm flex items-center whitespace-nowrap"><i class="fa-brands fa-linux mr-1.5 md:mr-2 text-blue-500 w-3 md:w-4 text-center"></i>Kernel</span>
+                        <span class="font-semibold text-[10px] md:text-xs text-left lg:text-right leading-snug break-words w-full">4.19.325 Mystrile-Mi8937 oc</span>
                     </div>
-                    
-                    <div class="rounded-lg p-3 flex justify-between items-center bg-slate-50 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-700/50 text-slate-700 dark:text-slate-200">
-                        <span class="text-sm"><i class="fa-solid fa-memory mr-2 text-blue-500"></i>Storage</span>
-                        <span class="font-semibold text-sm">3 GB / 32 GB</span>
+                    <div class="rounded-md md:rounded-lg p-2 md:p-3 flex flex-col lg:flex-row lg:justify-between items-start lg:items-center bg-slate-50 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-700/50 text-slate-700 dark:text-slate-200 gap-1 md:gap-2">
+                        <span class="text-[10px] md:text-sm flex items-center whitespace-nowrap"><i class="fa-solid fa-memory mr-1.5 md:mr-2 text-blue-500 w-3 md:w-4 text-center"></i>Storage</span>
+                        <span class="font-semibold text-[11px] md:text-sm text-left lg:text-right leading-snug">3 GB / 32 GB</span>
                     </div>
                 </div>
             </div>
 
-            <!-- Baris 2: Aksesoris Kiri (Earphone) -->
-            <div class="glass-card p-7 rounded-2xl bg-white/70 dark:bg-slate-800/60 border border-slate-200/80 dark:border-white/10 shadow-lg dark:shadow-xl hover:-translate-y-1 transition duration-300 text-slate-900 dark:text-slate-100">
-                <div class="flex justify-between items-start mb-6">
+            <!-- Baris 2: Aksesoris Kiri (Earphone FOOMEE) -->
+            <div class="glass-card p-4 md:p-7 rounded-xl md:rounded-2xl bg-white/70 dark:bg-slate-800/60 border border-slate-200/80 dark:border-white/10 shadow-lg dark:shadow-xl hover:-translate-y-1 transition duration-300 text-slate-900 dark:text-slate-100 flex flex-col">
+                <div class="flex flex-col lg:flex-row lg:justify-between items-start mb-4 md:mb-6 gap-2">
                     <div>
-                        <h3 class="text-2xl font-bold mb-1">FOOMEE QA02</h3>
-                        <p class="text-xs text-slate-500 dark:text-slate-400"><i class="fa-solid fa-headphones-simple text-purple-500 mr-1"></i> Earphone</p>
+                        <h3 class="text-sm md:text-2xl font-bold mb-0.5 md:mb-1 leading-tight">FOOMEE QA02</h3>
+                        <p class="text-[9px] md:text-xs text-slate-500 dark:text-slate-400"><i class="fa-solid fa-headphones-simple text-purple-500 mr-1"></i> Earphone</p>
                     </div>
-                    <span class="text-xs px-3 py-1.5 rounded-full border bg-purple-50 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 border-purple-200 dark:border-purple-800/50 font-medium tracking-wide">Audio</span>
+                    <span class="text-[9px] md:text-xs px-2 py-1 md:px-3 md:py-1.5 rounded-full border bg-purple-50 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 border-purple-200 dark:border-purple-800/50 font-medium tracking-wide">Audio</span>
                 </div>
                 
-                <div class="space-y-3">
-                    <div class="rounded-lg p-3 flex justify-between items-center bg-slate-50 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-700/50 text-slate-700 dark:text-slate-200">
-                        <span class="text-sm"><i class="fa-solid fa-headset mr-2 text-purple-500"></i>Tipe</span>
-                        <span class="font-semibold text-sm">Wired In-Ear</span>
+                <div class="space-y-2 md:space-y-3 flex-grow">
+                    <div class="rounded-md md:rounded-lg p-2 md:p-3 flex flex-col lg:flex-row lg:justify-between items-start lg:items-center bg-slate-50 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-700/50 text-slate-700 dark:text-slate-200 gap-1 md:gap-2">
+                        <span class="text-[10px] md:text-sm flex items-center whitespace-nowrap"><i class="fa-solid fa-headset mr-1.5 md:mr-2 text-purple-500 w-3 md:w-4 text-center"></i>Tipe</span>
+                        <span class="font-semibold text-[11px] md:text-sm text-left lg:text-right leading-snug">Wired In-Ear</span>
                     </div>
-                    <div class="rounded-lg p-3 flex justify-between items-center bg-slate-50 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-700/50 text-slate-700 dark:text-slate-200">
-                        <span class="text-sm"><i class="fa-solid fa-plug mr-2 text-purple-500"></i>Konektor</span>
-                        <span class="font-semibold text-sm">3.5mm Audio Jack</span>
+                    <div class="rounded-md md:rounded-lg p-2 md:p-3 flex flex-col lg:flex-row lg:justify-between items-start lg:items-center bg-slate-50 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-700/50 text-slate-700 dark:text-slate-200 gap-1 md:gap-2">
+                        <span class="text-[10px] md:text-sm flex items-center whitespace-nowrap"><i class="fa-solid fa-plug mr-1.5 md:mr-2 text-purple-500 w-3 md:w-4 text-center"></i>Konektor</span>
+                        <span class="font-semibold text-[11px] md:text-sm text-left lg:text-right leading-snug">3.5mm Jack</span>
                     </div>
-                    <div class="rounded-lg p-3 flex justify-between items-center bg-slate-50 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-700/50 text-slate-700 dark:text-slate-200">
-                        <span class="text-sm"><i class="fa-solid fa-bolt mr-2 text-purple-500"></i>Impedansi</span>
-                        <span class="font-semibold text-sm">16Ω</span>
+                    <div class="rounded-md md:rounded-lg p-2 md:p-3 flex flex-col lg:flex-row lg:justify-between items-start lg:items-center bg-slate-50 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-700/50 text-slate-700 dark:text-slate-200 gap-1 md:gap-2">
+                        <span class="text-[10px] md:text-sm flex items-center whitespace-nowrap"><i class="fa-solid fa-bolt mr-1.5 md:mr-2 text-purple-500 w-3 md:w-4 text-center"></i>Impedansi</span>
+                        <span class="font-semibold text-[11px] md:text-sm text-left lg:text-right leading-snug">16Ω</span>
                     </div>
-                    <div class="rounded-lg p-3 flex justify-between items-center bg-slate-50 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-700/50 text-slate-700 dark:text-slate-200">
-                        <span class="text-sm"><i class="fa-solid fa-wave-square mr-2 text-purple-500"></i>Respon Frekuensi</span>
-                        <span class="font-semibold text-sm">20Hz - 20KHz</span>
+                    <div class="rounded-md md:rounded-lg p-2 md:p-3 flex flex-col lg:flex-row lg:justify-between items-start lg:items-center bg-slate-50 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-700/50 text-slate-700 dark:text-slate-200 gap-1 md:gap-2">
+                        <span class="text-[10px] md:text-sm flex items-center whitespace-nowrap"><i class="fa-solid fa-wave-square mr-1.5 md:mr-2 text-purple-500 w-3 md:w-4 text-center"></i>Frekuensi</span>
+                        <span class="font-semibold text-[11px] md:text-sm text-left lg:text-right leading-snug break-words">20Hz - 20KHz</span>
                     </div>
-                    <div class="rounded-lg p-3 flex justify-between items-center bg-slate-50 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-700/50 text-slate-700 dark:text-slate-200">
-                        <span class="text-sm"><i class="fa-solid fa-power-off mr-2 text-purple-500"></i>Output Daya</span>
-                        <span class="font-semibold text-sm">Rated Power 3mW</span>
+                    <div class="rounded-md md:rounded-lg p-2 md:p-3 flex flex-col lg:flex-row lg:justify-between items-start lg:items-center bg-slate-50 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-700/50 text-slate-700 dark:text-slate-200 gap-1 md:gap-2">
+                        <span class="text-[10px] md:text-sm flex items-center whitespace-nowrap"><i class="fa-solid fa-power-off mr-1.5 md:mr-2 text-purple-500 w-3 md:w-4 text-center"></i>Daya</span>
+                        <span class="font-semibold text-[11px] md:text-sm text-left lg:text-right leading-snug break-words">Rated 3mW</span>
                     </div>
-                    <div class="rounded-lg p-3 flex justify-between items-center bg-slate-50 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-700/50 text-slate-700 dark:text-slate-200">
-                        <span class="text-sm"><i class="fa-solid fa-volume-high mr-2 text-purple-500"></i>Sensitivitas</span>
-                        <span class="font-semibold text-sm">95dB ± 3dB</span>
+                    <div class="rounded-md md:rounded-lg p-2 md:p-3 flex flex-col lg:flex-row lg:justify-between items-start lg:items-center bg-slate-50 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-700/50 text-slate-700 dark:text-slate-200 gap-1 md:gap-2">
+                        <span class="text-[10px] md:text-sm flex items-center whitespace-nowrap"><i class="fa-solid fa-volume-high mr-1.5 md:mr-2 text-purple-500 w-3 md:w-4 text-center"></i>Sensitivitas</span>
+                        <span class="font-semibold text-[11px] md:text-sm text-left lg:text-right leading-snug break-words">95dB ± 3dB</span>
                     </div>
-                    <div class="rounded-lg p-3 flex justify-between items-center bg-slate-50 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-700/50 text-slate-700 dark:text-slate-200">
-                        <span class="text-sm"><i class="fa-solid fa-ruler-horizontal mr-2 text-purple-500"></i>Panjang Kabel</span>
-                        <span class="font-semibold text-sm">1.2 Meter</span>
+                    <div class="rounded-md md:rounded-lg p-2 md:p-3 flex flex-col lg:flex-row lg:justify-between items-start lg:items-center bg-slate-50 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-700/50 text-slate-700 dark:text-slate-200 gap-1 md:gap-2">
+                        <span class="text-[10px] md:text-sm flex items-center whitespace-nowrap"><i class="fa-solid fa-ruler-horizontal mr-1.5 md:mr-2 text-purple-500 w-3 md:w-4 text-center"></i>P. Kabel</span>
+                        <span class="font-semibold text-[11px] md:text-sm text-left lg:text-right leading-snug">1.2 Meter</span>
                     </div>
                 </div>
             </div>
 
-            <!-- Baris 2: Aksesoris Kanan (USB Audio) -->
-            <div class="glass-card p-7 rounded-2xl bg-white/70 dark:bg-slate-800/60 border border-slate-200/80 dark:border-white/10 shadow-lg dark:shadow-xl hover:-translate-y-1 transition duration-300 text-slate-900 dark:text-slate-100">
-                <div class="flex justify-between items-start mb-6">
+            <!-- Baris 2: Aksesoris Kanan (POPCORN Aux Cable) -->
+            <div class="glass-card p-4 md:p-7 rounded-xl md:rounded-2xl bg-white/70 dark:bg-slate-800/60 border border-slate-200/80 dark:border-white/10 shadow-lg dark:shadow-xl hover:-translate-y-1 transition duration-300 text-slate-900 dark:text-slate-100 flex flex-col">
+                <div class="flex flex-col lg:flex-row lg:justify-between items-start mb-4 md:mb-6 gap-2">
                     <div>
-                        <h3 class="text-2xl font-bold mb-1">POPCORN Aux Cable</h3>
-                        <p class="text-xs text-slate-500 dark:text-slate-400"><i class="fa-solid fa-usb text-emerald-500 mr-1"></i> USB Audio</p>
+                        <h3 class="text-sm md:text-2xl font-bold mb-0.5 md:mb-1 leading-tight">POPCORN Aux</h3>
+                        <p class="text-[9px] md:text-xs text-slate-500 dark:text-slate-400"><i class="fa-solid fa-usb text-emerald-500 mr-1"></i> USB Audio</p>
                     </div>
-                    <span class="text-xs px-3 py-1.5 rounded-full border bg-emerald-50 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-300 border-emerald-200 dark:border-emerald-800/50 font-medium tracking-wide">DAC / Cable</span>
+                    <span class="text-[9px] md:text-xs px-2 py-1 md:px-3 md:py-1.5 rounded-full border bg-emerald-50 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-300 border-emerald-200 dark:border-emerald-800/50 font-medium tracking-wide">DAC</span>
                 </div>
                 
-                <div class="space-y-3">
-                    <div class="rounded-lg p-3 flex justify-between items-center bg-slate-50 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-700/50 text-slate-700 dark:text-slate-200">
-                        <span class="text-sm"><i class="fa-solid fa-industry mr-2 text-emerald-500"></i>Manufacturer</span>
-                        <span class="font-semibold text-sm">SPACETOUCH</span>
+                <div class="space-y-2 md:space-y-3 flex-grow">
+                    <div class="rounded-md md:rounded-lg p-2 md:p-3 flex flex-col lg:flex-row lg:justify-between items-start lg:items-center bg-slate-50 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-700/50 text-slate-700 dark:text-slate-200 gap-1 md:gap-2">
+                        <span class="text-[10px] md:text-sm flex items-center whitespace-nowrap"><i class="fa-solid fa-industry mr-1.5 md:mr-2 text-emerald-500 w-3 md:w-4 text-center"></i>Manufaktur</span>
+                        <span class="font-semibold text-[11px] md:text-sm text-left lg:text-right leading-snug break-words">SPACETOUCH</span>
                     </div>
-                    <div class="rounded-lg p-3 flex justify-between items-center bg-slate-50 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-700/50 text-slate-700 dark:text-slate-200">
-                        <span class="text-sm"><i class="fa-solid fa-box mr-2 text-emerald-500"></i>Product</span>
-                        <span class="font-semibold text-sm">USB Audio</span>
+                    <div class="rounded-md md:rounded-lg p-2 md:p-3 flex flex-col lg:flex-row lg:justify-between items-start lg:items-center bg-slate-50 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-700/50 text-slate-700 dark:text-slate-200 gap-1 md:gap-2">
+                        <span class="text-[10px] md:text-sm flex items-center whitespace-nowrap"><i class="fa-solid fa-box mr-1.5 md:mr-2 text-emerald-500 w-3 md:w-4 text-center"></i>Produk</span>
+                        <span class="font-semibold text-[11px] md:text-sm text-left lg:text-right leading-snug">USB Audio</span>
                     </div>
-                    <div class="rounded-lg p-3 flex justify-between items-center bg-slate-50 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-700/50 text-slate-700 dark:text-slate-200">
-                        <span class="text-sm"><i class="fa-solid fa-music mr-2 text-emerald-500"></i>Rates (kHz)</span>
-                        <span class="font-semibold text-sm text-right">44.1 kHz, 48 kHz</span>
+                    <div class="rounded-md md:rounded-lg p-2 md:p-3 flex flex-col lg:flex-row lg:justify-between items-start lg:items-center bg-slate-50 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-700/50 text-slate-700 dark:text-slate-200 gap-1 md:gap-2">
+                        <span class="text-[10px] md:text-sm flex items-center whitespace-nowrap"><i class="fa-solid fa-music mr-1.5 md:mr-2 text-emerald-500 w-3 md:w-4 text-center"></i>Rates (kHz)</span>
+                        <span class="font-semibold text-[11px] md:text-sm text-left lg:text-right leading-snug">44.1, 48 kHz</span>
                     </div>
-                    <div class="rounded-lg p-3 flex justify-between items-center bg-slate-50 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-700/50 text-slate-700 dark:text-slate-200">
-                        <span class="text-sm"><i class="fa-solid fa-layer-group mr-2 text-emerald-500"></i>Depth</span>
-                        <span class="font-semibold text-xs text-right max-w-[60%]">8-bit, 16-bit, 24-bit, 32-bit, Float</span>
+                    <div class="rounded-md md:rounded-lg p-2 md:p-3 flex flex-col lg:flex-row lg:justify-between items-start lg:items-center bg-slate-50 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-700/50 text-slate-700 dark:text-slate-200 gap-1 md:gap-2">
+                        <span class="text-[10px] md:text-sm flex items-center whitespace-nowrap"><i class="fa-solid fa-layer-group mr-1.5 md:mr-2 text-emerald-500 w-3 md:w-4 text-center"></i>Depth</span>
+                        <span class="font-semibold text-[10px] md:text-xs text-left lg:text-right leading-snug break-words w-full">8, 16, 24, 32-bit, Float</span>
                     </div>
-                    <div class="rounded-lg p-3 flex justify-between items-center bg-slate-50 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-700/50 text-slate-700 dark:text-slate-200">
-                        <span class="text-sm"><i class="fa-solid fa-plug-circle-bolt mr-2 text-emerald-500"></i>Power</span>
-                        <span class="font-semibold text-sm">50 mA</span>
+                    <div class="rounded-md md:rounded-lg p-2 md:p-3 flex flex-col lg:flex-row lg:justify-between items-start lg:items-center bg-slate-50 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-700/50 text-slate-700 dark:text-slate-200 gap-1 md:gap-2">
+                        <span class="text-[10px] md:text-sm flex items-center whitespace-nowrap"><i class="fa-solid fa-plug-circle-bolt mr-1.5 md:mr-2 text-emerald-500 w-3 md:w-4 text-center"></i>Power</span>
+                        <span class="font-semibold text-[11px] md:text-sm text-left lg:text-right leading-snug">50 mA</span>
                     </div>
-                    <div class="rounded-lg p-3 flex justify-between items-center bg-slate-50 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-700/50 text-slate-700 dark:text-slate-200">
-                        <span class="text-sm"><i class="fa-solid fa-list-check mr-2 text-emerald-500"></i>Features</span>
-                        <span class="font-semibold text-xs text-right">Audio playback, Audio capture</span>
+                    <div class="rounded-md md:rounded-lg p-2 md:p-3 flex flex-col lg:flex-row lg:justify-between items-start lg:items-center bg-slate-50 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-700/50 text-slate-700 dark:text-slate-200 gap-1 md:gap-2">
+                        <span class="text-[10px] md:text-sm flex items-center whitespace-nowrap"><i class="fa-solid fa-list-check mr-1.5 md:mr-2 text-emerald-500 w-3 md:w-4 text-center"></i>Fitur</span>
+                        <span class="font-semibold text-[10px] md:text-xs text-left lg:text-right leading-snug break-words w-full">Playback, Capture</span>
                     </div>
                 </div>
             </div>
 
-            <!-- Baris 3: Kiri (Bluetooth Speaker) -->
-            <div class="glass-card p-7 rounded-2xl bg-white/70 dark:bg-slate-800/60 border border-slate-200/80 dark:border-white/10 shadow-lg dark:shadow-xl hover:-translate-y-1 transition duration-300 text-slate-900 dark:text-slate-100">
-                <div class="flex justify-between items-start mb-6">
+            <!-- Baris 3: Kiri (Bluetooth Speaker Robot RB120) -->
+            <div class="glass-card p-4 md:p-7 rounded-xl md:rounded-2xl bg-white/70 dark:bg-slate-800/60 border border-slate-200/80 dark:border-white/10 shadow-lg dark:shadow-xl hover:-translate-y-1 transition duration-300 text-slate-900 dark:text-slate-100 flex flex-col">
+                <div class="flex flex-col lg:flex-row lg:justify-between items-start mb-4 md:mb-6 gap-2">
                     <div>
-                        <h3 class="text-2xl font-bold mb-1">Robot RB120</h3>
-                        <p class="text-xs text-slate-500 dark:text-slate-400"><i class="fa-solid fa-speaker-deck text-rose-500 mr-1"></i> Speaker</p>
+                        <h3 class="text-sm md:text-2xl font-bold mb-0.5 md:mb-1 leading-tight">Robot RB120</h3>
+                        <p class="text-[9px] md:text-xs text-slate-500 dark:text-slate-400"><i class="fa-solid fa-speaker-deck text-rose-500 mr-1"></i> Speaker</p>
                     </div>
-                    <span class="text-xs px-3 py-1.5 rounded-full border bg-rose-50 dark:bg-rose-900/30 text-rose-700 dark:text-rose-300 border-rose-200 dark:border-rose-800/50 font-medium tracking-wide">Wireless</span>
+                    <span class="text-[9px] md:text-xs px-2 py-1 md:px-3 md:py-1.5 rounded-full border bg-rose-50 dark:bg-rose-900/30 text-rose-700 dark:text-rose-300 border-rose-200 dark:border-rose-800/50 font-medium tracking-wide">Wireless</span>
                 </div>
                 
-                <div class="space-y-3">
-                    <div class="rounded-lg p-3 flex justify-between items-center bg-slate-50 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-700/50 text-slate-700 dark:text-slate-200">
-                        <span class="text-sm"><i class="fa-solid fa-mobile-screen mr-2 text-rose-500"></i>Tipe</span>
-                        <span class="font-semibold text-sm text-right">Portable Bluetooth Speaker</span>
+                <div class="space-y-2 md:space-y-3 flex-grow">
+                    <div class="rounded-md md:rounded-lg p-2 md:p-3 flex flex-col lg:flex-row lg:justify-between items-start lg:items-center bg-slate-50 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-700/50 text-slate-700 dark:text-slate-200 gap-1 md:gap-2">
+                        <span class="text-[10px] md:text-sm flex items-center whitespace-nowrap"><i class="fa-solid fa-mobile-screen mr-1.5 md:mr-2 text-rose-500 w-3 md:w-4 text-center"></i>Tipe</span>
+                        <span class="font-semibold text-[11px] md:text-sm text-left lg:text-right leading-snug">Portable Speaker</span>
                     </div>
-                    <div class="rounded-lg p-3 flex justify-between items-center bg-slate-50 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-700/50 text-slate-700 dark:text-slate-200">
-                        <span class="text-sm"><i class="fa-brands fa-bluetooth-b mr-2 text-rose-500"></i>Konektivitas</span>
-                        <span class="font-semibold text-sm">Bluetooth 5.3</span>
+                    <div class="rounded-md md:rounded-lg p-2 md:p-3 flex flex-col lg:flex-row lg:justify-between items-start lg:items-center bg-slate-50 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-700/50 text-slate-700 dark:text-slate-200 gap-1 md:gap-2">
+                        <span class="text-[10px] md:text-sm flex items-center whitespace-nowrap"><i class="fa-brands fa-bluetooth-b mr-1.5 md:mr-2 text-rose-500 w-3 md:w-4 text-center"></i>Bluetooth</span>
+                        <span class="font-semibold text-[11px] md:text-sm text-left lg:text-right leading-snug">V5.3</span>
                     </div>
-                    <div class="rounded-lg p-3 flex justify-between items-center bg-slate-50 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-700/50 text-slate-700 dark:text-slate-200">
-                        <span class="text-sm"><i class="fa-solid fa-bolt mr-2 text-rose-500"></i>Output Power</span>
-                        <span class="font-semibold text-sm">5W</span>
+                    <div class="rounded-md md:rounded-lg p-2 md:p-3 flex flex-col lg:flex-row lg:justify-between items-start lg:items-center bg-slate-50 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-700/50 text-slate-700 dark:text-slate-200 gap-1 md:gap-2">
+                        <span class="text-[10px] md:text-sm flex items-center whitespace-nowrap"><i class="fa-solid fa-bolt mr-1.5 md:mr-2 text-rose-500 w-3 md:w-4 text-center"></i>Output</span>
+                        <span class="font-semibold text-[11px] md:text-sm text-left lg:text-right leading-snug">5W</span>
                     </div>
-                    <div class="rounded-lg p-3 flex justify-between items-center bg-slate-50 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-700/50 text-slate-700 dark:text-slate-200">
-                        <span class="text-sm"><i class="fa-solid fa-battery-three-quarters mr-2 text-rose-500"></i>Baterai</span>
-                        <span class="font-semibold text-sm">1200 mAh</span>
+                    <div class="rounded-md md:rounded-lg p-2 md:p-3 flex flex-col lg:flex-row lg:justify-between items-start lg:items-center bg-slate-50 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-700/50 text-slate-700 dark:text-slate-200 gap-1 md:gap-2">
+                        <span class="text-[10px] md:text-sm flex items-center whitespace-nowrap"><i class="fa-solid fa-battery-three-quarters mr-1.5 md:mr-2 text-rose-500 w-3 md:w-4 text-center"></i>Baterai</span>
+                        <span class="font-semibold text-[11px] md:text-sm text-left lg:text-right leading-snug">1200 mAh</span>
                     </div>
-                    <div class="rounded-lg p-3 flex justify-between items-center bg-slate-50 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-700/50 text-slate-700 dark:text-slate-200">
-                        <span class="text-sm"><i class="fa-regular fa-clock mr-2 text-rose-500"></i>Playtime</span>
-                        <span class="font-semibold text-sm">Hingga 8 Jam</span>
+                    <div class="rounded-md md:rounded-lg p-2 md:p-3 flex flex-col lg:flex-row lg:justify-between items-start lg:items-center bg-slate-50 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-700/50 text-slate-700 dark:text-slate-200 gap-1 md:gap-2">
+                        <span class="text-[10px] md:text-sm flex items-center whitespace-nowrap"><i class="fa-regular fa-clock mr-1.5 md:mr-2 text-rose-500 w-3 md:w-4 text-center"></i>Playtime</span>
+                        <span class="font-semibold text-[11px] md:text-sm text-left lg:text-right leading-snug">~8 Jam</span>
                     </div>
-                    <div class="rounded-lg p-3 flex justify-between items-center bg-slate-50 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-700/50 text-slate-700 dark:text-slate-200">
-                        <span class="text-sm"><i class="fa-solid fa-star mr-2 text-rose-500"></i>Fitur Tambahan</span>
-                        <span class="font-semibold text-xs text-right">TWS, Micro SD, USB, Built-in Mic</span>
+                    <div class="rounded-md md:rounded-lg p-2 md:p-3 flex flex-col lg:flex-row lg:justify-between items-start lg:items-center bg-slate-50 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-700/50 text-slate-700 dark:text-slate-200 gap-1 md:gap-2">
+                        <span class="text-[10px] md:text-sm flex items-center whitespace-nowrap"><i class="fa-solid fa-star mr-1.5 md:mr-2 text-rose-500 w-3 md:w-4 text-center"></i>Fitur Tmbh.</span>
+                        <span class="font-semibold text-[10px] md:text-xs text-left lg:text-right leading-snug break-words w-full">TWS, SD, USB, Mic</span>
                     </div>
                 </div>
             </div>
 
-            <!-- Posisi Kanan Baris 3 (Kosong, siap jika ingin ditambah perangkat ke-6) -->
+            <!-- Posisi Kanan Baris 3 (Bisa dibiarkan kosong/transparent agar tata letak tidak berantakan jika perangkat ganjil) -->
+            <div class="hidden md:block"></div>
             
         </div>
     </main>
 
-    <footer class="mt-16 mb-6 text-slate-500 text-sm z-10 text-center">
+    <footer class="mt-12 mb-6 text-slate-500 text-[10px] md:text-sm z-10 text-center">
         <p>&copy; 2026 ridz_angelica.ugg. Root and custom rom.</p>
     </footer>
 
