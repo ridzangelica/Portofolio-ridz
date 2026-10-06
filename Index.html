@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!-- Tambahan class="dark" agar saat web baru dimuat langsung rapi tanpa kedip -->
 <html lang="id" class="dark">
 <head>
     <meta charset="UTF-8">
@@ -68,15 +67,17 @@
     </header>
 
     <!-- Devices List Section -->
-    <main class="w-full max-w-4xl z-10">
+    <main class="w-full max-w-5xl z-10">
         <div class="flex items-center justify-center gap-3 mb-8">
             <div class="h-[1px] w-16 md:w-24 bg-slate-300 dark:bg-slate-700"></div>
-            <h2 class="text-lg md:text-xl font-semibold text-center text-slate-900 dark:text-slate-200"><i class="fa-solid fa-mobile-screen-button mr-2 text-cyan-500"></i>Perlengkapan & Spesifikasi Perangkat</h2>
+            <h2 class="text-lg md:text-xl font-semibold text-center text-slate-900 dark:text-slate-200"><i class="fa-solid fa-mobile-screen-button mr-2 text-cyan-500"></i>Perangkat Saya</h2>
             <div class="h-[1px] w-16 md:w-24 bg-slate-300 dark:bg-slate-700"></div>
         </div>
         
+        <!-- Grid Diubah Jadi 2 Kolom untuk Semua Baris -->
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <!-- Device 1: Redmi 9C -->
+            
+            <!-- Baris 1: HP Kiri (Redmi 9C) -->
             <div class="glass-card p-7 rounded-2xl bg-white/70 dark:bg-slate-800/60 border border-slate-200/80 dark:border-white/10 shadow-lg dark:shadow-xl hover:-translate-y-1 transition duration-300 text-slate-900 dark:text-slate-100">
                 <div class="flex justify-between items-start mb-6">
                     <div>
@@ -96,7 +97,6 @@
                         <span class="font-semibold text-sm">MediaTek Helio G35</span>
                     </div>
                     
-                    <!-- GPU -->
                     <div class="rounded-lg p-3 flex justify-between items-center bg-slate-50 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-700/50 text-slate-700 dark:text-slate-200">
                         <span class="text-sm flex items-center">
                             <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 mr-2 text-cyan-500" viewBox="0 0 24 24" fill="currentColor">
@@ -112,7 +112,6 @@
                         <span class="font-semibold text-sm">crDroid 12.5</span>
                     </div>
                     
-                    <!-- ANDROID -->
                     <div class="rounded-lg p-3 flex justify-between items-center bg-slate-50 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-700/50 text-slate-700 dark:text-slate-200">
                         <span class="text-sm"><i class="fa-brands fa-android mr-2 text-green-500"></i>Android</span>
                         <span class="font-semibold text-sm">16 qpr1</span>
@@ -123,7 +122,6 @@
                         <span class="font-semibold text-green-500 text-sm">Nadeko SU v30020</span>
                     </div>
                     
-                    <!-- KERNEL -->
                     <div class="rounded-lg p-3 flex justify-between items-center bg-slate-50 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-700/50 text-slate-700 dark:text-slate-200">
                         <span class="text-sm"><i class="fa-brands fa-linux mr-2 text-cyan-500"></i>Kernel</span>
                         <span class="font-semibold text-xs text-right leading-tight max-w-[65%]">4.19.275-Ridz_angelica OC Kernel hililuo G35</span>
@@ -136,7 +134,7 @@
                 </div>
             </div>
 
-            <!-- Device 2: Redmi Note 5A Prime -->
+            <!-- Baris 1: HP Kanan (Redmi Note 5A Prime) -->
             <div class="glass-card p-7 rounded-2xl bg-white/70 dark:bg-slate-800/60 border border-slate-200/80 dark:border-white/10 shadow-lg dark:shadow-xl hover:-translate-y-1 transition duration-300 text-slate-900 dark:text-slate-100">
                 <div class="flex justify-between items-start mb-6">
                     <div>
@@ -156,7 +154,6 @@
                         <span class="font-semibold text-sm">Snapdragon 435</span>
                     </div>
                     
-                    <!-- GPU -->
                     <div class="rounded-lg p-3 flex justify-between items-center bg-slate-50 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-700/50 text-slate-700 dark:text-slate-200">
                         <span class="text-sm flex items-center">
                             <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 mr-2 text-blue-500" viewBox="0 0 24 24" fill="currentColor">
@@ -172,7 +169,6 @@
                         <span class="font-semibold text-sm">Infinity 3.5</span>
                     </div>
                     
-                    <!-- ANDROID -->
                     <div class="rounded-lg p-3 flex justify-between items-center bg-slate-50 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-700/50 text-slate-700 dark:text-slate-200">
                         <span class="text-sm"><i class="fa-brands fa-android mr-2 text-green-500"></i>Android</span>
                         <span class="font-semibold text-sm">16 Qpr0</span>
@@ -183,7 +179,6 @@
                         <span class="font-semibold text-green-500 text-sm">KernelSU v32546-2</span>
                     </div>
                     
-                    <!-- KERNEL -->
                     <div class="rounded-lg p-3 flex justify-between items-center bg-slate-50 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-700/50 text-slate-700 dark:text-slate-200">
                         <span class="text-sm"><i class="fa-brands fa-linux mr-2 text-blue-500"></i>Kernel</span>
                         <span class="font-semibold text-xs text-right leading-tight max-w-[65%]">4.19.325 Mystrile-Mi8937 oc</span>
@@ -195,66 +190,42 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </main>
 
-    <footer class="mt-16 mb-6 text-slate-500 text-sm z-10 text-center">
-        <p>&copy; 2026 ridz_angelica.ugg. Root and custom rom.</p>
-    </footer>
-
-    <!-- Skrip Tema Singkat & Anti-Error -->
-    <script>
-        function updateBtn(theme) {
-            const icon = document.getElementById('theme-icon');
-            const text = document.getElementById('theme-text');
-            if (theme === 'dark') {
-                icon.className = "fa-solid fa-moon text-indigo-400";
-                text.innerText = "Gelap";
-            } else {
-                icon.className = "fa-solid fa-sun text-amber-500";
-                text.innerText = "Terang";
-            }
-        }
-
-        function toggleTheme() {
-            const html = document.documentElement;
-            if (html.classList.contains('dark')) {
-                html.classList.remove('dark');
-                localStorage.setItem('user_theme', 'light');
-                updateBtn('light');
-            } else {
-                html.classList.add('dark');
-                localStorage.setItem('user_theme', 'dark');
-                updateBtn('dark');
-            }
-        }
-
-        window.onload = function() {
-            const savedTheme = localStorage.getItem('user_theme');
-            const currentHour = new Date().getHours();
-            let themeToApply = 'dark'; // Default awal
-
-            // Cek jika pengguna pernah memilih, jika tidak ikuti jam
-            if (savedTheme) {
-                themeToApply = savedTheme;
-            } else {
-                // Jam 06:00 pagi sampai 17:59 sore = Terang
-                if (currentHour >= 6 && currentHour < 18) {
-                    themeToApply = 'light';
-                } else {
-                    themeToApply = 'dark';
-                }
-            }
-
-            // Terapkan ke HTML
-            if (themeToApply === 'dark') {
-                document.documentElement.classList.add('dark');
-            } else {
-                document.documentElement.classList.remove('dark');
-            }
-            updateBtn(themeToApply);
-        }
-    </script>
-</body>
-                            </html>
-    
+            <!-- Baris 2: Aksesoris Kiri (Earphone) -->
+            <div class="glass-card p-7 rounded-2xl bg-white/70 dark:bg-slate-800/60 border border-slate-200/80 dark:border-white/10 shadow-lg dark:shadow-xl hover:-translate-y-1 transition duration-300 text-slate-900 dark:text-slate-100">
+                <div class="flex justify-between items-start mb-6">
+                    <div>
+                        <h3 class="text-2xl font-bold mb-1">FOOMEE QA02</h3>
+                        <p class="text-xs text-slate-500 dark:text-slate-400"><i class="fa-solid fa-headphones-simple text-purple-500 mr-1"></i> Earphone</p>
+                    </div>
+                    <span class="text-xs px-3 py-1.5 rounded-full border bg-purple-50 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 border-purple-200 dark:border-purple-800/50 font-medium tracking-wide">Audio</span>
+                </div>
+                
+                <div class="space-y-3">
+                    <div class="rounded-lg p-3 flex justify-between items-center bg-slate-50 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-700/50 text-slate-700 dark:text-slate-200">
+                        <span class="text-sm"><i class="fa-solid fa-headset mr-2 text-purple-500"></i>Tipe</span>
+                        <span class="font-semibold text-sm">Wired In-Ear</span>
+                    </div>
+                    <div class="rounded-lg p-3 flex justify-between items-center bg-slate-50 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-700/50 text-slate-700 dark:text-slate-200">
+                        <span class="text-sm"><i class="fa-solid fa-plug mr-2 text-purple-500"></i>Konektor</span>
+                        <span class="font-semibold text-sm">3.5mm Audio Jack</span>
+                    </div>
+                    <div class="rounded-lg p-3 flex justify-between items-center bg-slate-50 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-700/50 text-slate-700 dark:text-slate-200">
+                        <span class="text-sm"><i class="fa-solid fa-bolt mr-2 text-purple-500"></i>Impedansi</span>
+                        <span class="font-semibold text-sm">16Ω</span>
+                    </div>
+                    <div class="rounded-lg p-3 flex justify-between items-center bg-slate-50 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-700/50 text-slate-700 dark:text-slate-200">
+                        <span class="text-sm"><i class="fa-solid fa-wave-square mr-2 text-purple-500"></i>Respon Frekuensi</span>
+                        <span class="font-semibold text-sm">20Hz - 20KHz</span>
+                    </div>
+                    <div class="rounded-lg p-3 flex justify-between items-center bg-slate-50 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-700/50 text-slate-700 dark:text-slate-200">
+                        <span class="text-sm"><i class="fa-solid fa-power-off mr-2 text-purple-500"></i>Output Daya</span>
+                        <span class="font-semibold text-sm">Rated Power 3mW</span>
+                    </div>
+                    <div class="rounded-lg p-3 flex justify-between items-center bg-slate-50 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-700/50 text-slate-700 dark:text-slate-200">
+                        <span class="text-sm"><i class="fa-solid fa-volume-high mr-2 text-purple-500"></i>Sensitivitas</span>
+                        <span class="font-semibold text-sm">95dB ± 3dB</span>
+                    </div>
+                    <div class="rounded-lg p-3 flex justify-between items-center bg-slate-50 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-700/50 text-slate-700 dark:text-slate-200">
+                        <span class="text-sm"><i class="fa-solid fa-ruler-horizontal mr-2 text-purple-500"></i>Panjang Kabel</span>
+                        <span class="font-semibold text-sm">1.2 Mete
