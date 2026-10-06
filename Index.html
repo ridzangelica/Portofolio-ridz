@@ -24,16 +24,26 @@
             backdrop-filter: blur(12px); 
             -webkit-backdrop-filter: blur(12px);
         }
-        /* Transisi mulus untuk buka-tutup detail perangkat */
+        /* Transisi mulus akordeon: default tertutup (tinggi 0) */
         .spec-content {
-            transition: max-height 0.4s ease-in-out, opacity 0.3s ease-in-out;
-            max-height: 1000px;
-            opacity: 1;
-            overflow: hidden;
-        }
-        .spec-content.collapsed {
+            transition: max-height 0.4s ease-in-out, opacity 0.3s ease-in-out, margin-top 0.3s ease-in-out;
             max-height: 0px;
             opacity: 0;
+            overflow: hidden;
+            margin-top: 0px;
+        }
+        /* Saat dibuka (expanded) */
+        .spec-content.expanded {
+            max-height: 1000px;
+            opacity: 1;
+            margin-top: 1rem;
+        }
+        /* Rotasi panah indikator */
+        .arrow-icon {
+            transition: transform 0.3s ease-in-out;
+        }
+        .expanded-card .arrow-icon {
+            transform: rotate(180deg);
         }
     </style>
 </head>
@@ -91,18 +101,16 @@
             <div class="grid grid-cols-2 gap-3 md:gap-6">
                 
                 <!-- Redmi 9C -->
-                <div onclick="toggleCard(this)" class="glass-card p-4 md:p-7 rounded-xl md:rounded-2xl bg-white/70 dark:bg-slate-800/60 border border-slate-200/80 dark:border-white/10 shadow-lg dark:shadow-xl hover:border-cyan-500 transition duration-300 text-slate-900 dark:text-slate-100 flex flex-col cursor-pointer select-none">
-                    <div class="flex flex-col lg:flex-row lg:justify-between items-start mb-3 md:mb-6 gap-2">
+                <div onclick="toggleCard(this)" class="glass-card p-4 md:p-6 rounded-xl md:rounded-2xl bg-white/70 dark:bg-slate-800/60 border border-slate-200/80 dark:border-white/10 shadow-md dark:shadow-xl hover:border-cyan-500 transition duration-300 text-slate-900 dark:text-slate-100 flex flex-col cursor-pointer select-none">
+                    <div class="flex flex-row justify-between items-center">
                         <div>
-                            <h3 class="text-sm md:text-2xl font-bold mb-0.5 md:mb-1 leading-tight flex items-center justify-between w-full">
-                                Redmi 9C <i class="fa-solid fa-chevron-down text-xs text-slate-400 transition-transform duration-300 arrow-icon"></i>
-                            </h3>
-                            <p class="text-[9px] md:text-xs text-slate-500 dark:text-slate-400"><i class="fa-brands fa-android text-green-500 mr-1"></i> Xiaomi</p>
+                            <h3 class="text-xs md:text-lg font-bold leading-tight">Redmi 9C</h3>
+                            <p class="text-[9px] md:text-xs text-slate-500 dark:text-slate-400 mt-0.5"><i class="fa-brands fa-android text-green-500 mr-1"></i> Daily Device</p>
                         </div>
-                        <span class="text-[9px] md:text-xs px-2 py-1 md:px-3 md:py-1.5 rounded-full border bg-cyan-50 dark:bg-cyan-950 text-cyan-700 dark:text-cyan-300 border-cyan-200 dark:border-cyan-800/50 font-medium tracking-wide">Daily Device</span>
+                        <i class="fa-solid fa-chevron-down text-xs text-slate-400 arrow-icon"></i>
                     </div>
                     
-                    <div class="space-y-2 md:space-y-3 flex-grow spec-content">
+                    <div class="space-y-2 md:space-y-3 spec-content">
                         <div class="rounded-md md:rounded-lg p-2 md:p-3 flex flex-col lg:flex-row lg:justify-between items-start lg:items-center bg-slate-50 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-700/50 text-slate-700 dark:text-slate-200 gap-1 md:gap-2">
                             <span class="text-[10px] md:text-sm flex items-center whitespace-nowrap"><i class="fa-solid fa-fingerprint mr-1.5 md:mr-2 text-cyan-500 w-3 md:w-4 text-center"></i>Codename</span>
                             <span class="font-mono text-[10px] md:text-sm px-1.5 py-0.5 rounded bg-slate-200 dark:bg-cyan-950 text-slate-800 dark:text-cyan-300">angelica</span>
@@ -141,18 +149,16 @@
                 </div>
 
                 <!-- Redmi Note 5A Prime -->
-                <div onclick="toggleCard(this)" class="glass-card p-4 md:p-7 rounded-xl md:rounded-2xl bg-white/70 dark:bg-slate-800/60 border border-slate-200/80 dark:border-white/10 shadow-lg dark:shadow-xl hover:border-cyan-500 transition duration-300 text-slate-900 dark:text-slate-100 flex flex-col cursor-pointer select-none">
-                    <div class="flex flex-col lg:flex-row lg:justify-between items-start mb-3 md:mb-6 gap-2">
+                <div onclick="toggleCard(this)" class="glass-card p-4 md:p-6 rounded-xl md:rounded-2xl bg-white/70 dark:bg-slate-800/60 border border-slate-200/80 dark:border-white/10 shadow-md dark:shadow-xl hover:border-cyan-500 transition duration-300 text-slate-900 dark:text-slate-100 flex flex-col cursor-pointer select-none">
+                    <div class="flex flex-row justify-between items-center">
                         <div>
-                            <h3 class="text-sm md:text-2xl font-bold mb-0.5 md:mb-1 leading-tight flex items-center justify-between w-full">
-                                Redmi Note 5A P... <i class="fa-solid fa-chevron-down text-xs text-slate-400 transition-transform duration-300 arrow-icon"></i>
-                            </h3>
-                            <p class="text-[9px] md:text-xs text-slate-500 dark:text-slate-400"><i class="fa-brands fa-android text-green-500 mr-1"></i> Xiaomi</p>
+                            <h3 class="text-xs md:text-lg font-bold leading-tight">Redmi Note 5A P...</h3>
+                            <p class="text-[9px] md:text-xs text-slate-500 dark:text-slate-400 mt-0.5"><i class="fa-brands fa-android text-green-500 mr-1"></i> Sec. Device</p>
                         </div>
-                        <span class="text-[9px] md:text-xs px-2 py-1 md:px-3 md:py-1.5 rounded-full border bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border-slate-300 dark:border-slate-600/50 font-medium tracking-wide">Sec. Device</span>
+                        <i class="fa-solid fa-chevron-down text-xs text-slate-400 arrow-icon"></i>
                     </div>
                     
-                    <div class="space-y-2 md:space-y-3 flex-grow spec-content">
+                    <div class="space-y-2 md:space-y-3 spec-content">
                         <div class="rounded-md md:rounded-lg p-2 md:p-3 flex flex-col lg:flex-row lg:justify-between items-start lg:items-center bg-slate-50 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-700/50 text-slate-700 dark:text-slate-200 gap-1 md:gap-2">
                             <span class="text-[10px] md:text-sm flex items-center whitespace-nowrap"><i class="fa-solid fa-fingerprint mr-1.5 md:mr-2 text-blue-500 w-3 md:w-4 text-center"></i>Codename</span>
                             <span class="font-mono text-[10px] md:text-sm px-1.5 py-0.5 rounded bg-slate-200 dark:bg-blue-900/30 text-slate-800 dark:text-blue-300">ugg</span>
@@ -204,18 +210,16 @@
             <div class="grid grid-cols-2 gap-3 md:gap-6">
                 
                 <!-- Earphone FOOMEE QA02 -->
-                <div onclick="toggleCard(this)" class="glass-card p-4 md:p-7 rounded-xl md:rounded-2xl bg-white/70 dark:bg-slate-800/60 border border-slate-200/80 dark:border-white/10 shadow-lg dark:shadow-xl hover:border-purple-500 transition duration-300 text-slate-900 dark:text-slate-100 flex flex-col cursor-pointer select-none">
-                    <div class="flex flex-col lg:flex-row lg:justify-between items-start mb-3 md:mb-6 gap-2">
+                <div onclick="toggleCard(this)" class="glass-card p-4 md:p-6 rounded-xl md:rounded-2xl bg-white/70 dark:bg-slate-800/60 border border-slate-200/80 dark:border-white/10 shadow-md dark:shadow-xl hover:border-purple-500 transition duration-300 text-slate-900 dark:text-slate-100 flex flex-col cursor-pointer select-none">
+                    <div class="flex flex-row justify-between items-center">
                         <div>
-                            <h3 class="text-sm md:text-2xl font-bold mb-0.5 md:mb-1 leading-tight flex items-center justify-between w-full">
-                                FOOMEE QA02 <i class="fa-solid fa-chevron-down text-xs text-slate-400 transition-transform duration-300 arrow-icon"></i>
-                            </h3>
-                            <p class="text-[9px] md:text-xs text-slate-500 dark:text-slate-400"><i class="fa-solid fa-headphones-simple text-purple-500 mr-1"></i> Earphone</p>
+                            <h3 class="text-xs md:text-lg font-bold leading-tight">FOOMEE QA02</h3>
+                            <p class="text-[9px] md:text-xs text-slate-500 dark:text-slate-400 mt-0.5"><i class="fa-solid fa-headphones-simple text-purple-500 mr-1"></i> Earphone</p>
                         </div>
-                        <span class="text-[9px] md:text-xs px-2 py-1 md:px-3 md:py-1.5 rounded-full border bg-purple-50 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 border-purple-200 dark:border-purple-800/50 font-medium tracking-wide">Audio</span>
+                        <i class="fa-solid fa-chevron-down text-xs text-slate-400 arrow-icon"></i>
                     </div>
                     
-                    <div class="space-y-2 md:space-y-3 flex-grow spec-content">
+                    <div class="space-y-2 md:space-y-3 spec-content">
                         <div class="rounded-md md:rounded-lg p-2 md:p-3 flex flex-col lg:flex-row lg:justify-between items-start lg:items-center bg-slate-50 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-700/50 text-slate-700 dark:text-slate-200 gap-1 md:gap-2">
                             <span class="text-[10px] md:text-sm flex items-center whitespace-nowrap"><i class="fa-solid fa-headset mr-1.5 md:mr-2 text-purple-500 w-3 md:w-4 text-center"></i>Tipe</span>
                             <span class="font-semibold text-[11px] md:text-sm text-left lg:text-right leading-snug">Wired In-Ear</span>
@@ -248,18 +252,16 @@
                 </div>
 
                 <!-- POPCORN Aux Cable -->
-                <div onclick="toggleCard(this)" class="glass-card p-4 md:p-7 rounded-xl md:rounded-2xl bg-white/70 dark:bg-slate-800/60 border border-slate-200/80 dark:border-white/10 shadow-lg dark:shadow-xl hover:border-emerald-500 transition duration-300 text-slate-900 dark:text-slate-100 flex flex-col cursor-pointer select-none">
-                    <div class="flex flex-col lg:flex-row lg:justify-between items-start mb-3 md:mb-6 gap-2">
+                <div onclick="toggleCard(this)" class="glass-card p-4 md:p-6 rounded-xl md:rounded-2xl bg-white/70 dark:bg-slate-800/60 border border-slate-200/80 dark:border-white/10 shadow-md dark:shadow-xl hover:border-emerald-500 transition duration-300 text-slate-900 dark:text-slate-100 flex flex-col cursor-pointer select-none">
+                    <div class="flex flex-row justify-between items-center">
                         <div>
-                            <h3 class="text-sm md:text-2xl font-bold mb-0.5 md:mb-1 leading-tight flex items-center justify-between w-full">
-                                POPCORN Aux <i class="fa-solid fa-chevron-down text-xs text-slate-400 transition-transform duration-300 arrow-icon"></i>
-                            </h3>
-                            <p class="text-[9px] md:text-xs text-slate-500 dark:text-slate-400"><i class="fa-solid fa-usb text-emerald-500 mr-1"></i> USB Audio</p>
+                            <h3 class="text-xs md:text-lg font-bold leading-tight">POPCORN Aux</h3>
+                            <p class="text-[9px] md:text-xs text-slate-500 dark:text-slate-400 mt-0.5"><i class="fa-solid fa-usb text-emerald-500 mr-1"></i> USB Audio</p>
                         </div>
-                        <span class="text-[9px] md:text-xs px-2 py-1 md:px-3 md:py-1.5 rounded-full border bg-emerald-50 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-300 border-emerald-200 dark:border-emerald-800/50 font-medium tracking-wide">DAC</span>
+                        <i class="fa-solid fa-chevron-down text-xs text-slate-400 arrow-icon"></i>
                     </div>
                     
-                    <div class="space-y-2 md:space-y-3 flex-grow spec-content">
+                    <div class="space-y-2 md:space-y-3 spec-content">
                         <div class="rounded-md md:rounded-lg p-2 md:p-3 flex flex-col lg:flex-row lg:justify-between items-start lg:items-center bg-slate-50 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-700/50 text-slate-700 dark:text-slate-200 gap-1 md:gap-2">
                             <span class="text-[10px] md:text-sm flex items-center whitespace-nowrap"><i class="fa-solid fa-industry mr-1.5 md:mr-2 text-emerald-500 w-3 md:w-4 text-center"></i>Manufaktur</span>
                             <span class="font-semibold text-[11px] md:text-sm text-left lg:text-right leading-snug break-words">SPACETOUCH</span>
@@ -288,18 +290,16 @@
                 </div>
 
                 <!-- Robot RB120 -->
-                <div onclick="toggleCard(this)" class="glass-card p-4 md:p-7 rounded-xl md:rounded-2xl bg-white/70 dark:bg-slate-800/60 border border-slate-200/80 dark:border-white/10 shadow-lg dark:shadow-xl hover:border-rose-500 transition duration-300 text-slate-900 dark:text-slate-100 flex flex-col cursor-pointer select-none">
-                    <div class="flex flex-col lg:flex-row lg:justify-between items-start mb-3 md:mb-6 gap-2">
+                <div onclick="toggleCard(this)" class="glass-card p-4 md:p-6 rounded-xl md:rounded-2xl bg-white/70 dark:bg-slate-800/60 border border-slate-200/80 dark:border-white/10 shadow-md dark:shadow-xl hover:border-rose-500 transition duration-300 text-slate-900 dark:text-slate-100 flex flex-col cursor-pointer select-none">
+                    <div class="flex flex-row justify-between items-center">
                         <div>
-                            <h3 class="text-sm md:text-2xl font-bold mb-0.5 md:mb-1 leading-tight flex items-center justify-between w-full">
-                                Robot RB120 <i class="fa-solid fa-chevron-down text-xs text-slate-400 transition-transform duration-300 arrow-icon"></i>
-                            </h3>
-                            <p class="text-[9px] md:text-xs text-slate-500 dark:text-slate-400"><i class="fa-solid fa-speaker-deck text-rose-500 mr-1"></i> Speaker</p>
+                            <h3 class="text-xs md:text-lg font-bold leading-tight">Robot RB120</h3>
+                            <p class="text-[9px] md:text-xs text-slate-500 dark:text-slate-400 mt-0.5"><i class="fa-solid fa-speaker-deck text-rose-500 mr-1"></i> Audio</p>
                         </div>
-                        <span class="text-[9px] md:text-xs px-2 py-1 md:px-3 md:py-1.5 rounded-full border bg-rose-50 dark:bg-rose-900/30 text-rose-700 dark:text-rose-300 border-rose-200 dark:border-rose-800/50 font-medium tracking-wide">Audio</span>
+                        <i class="fa-solid fa-chevron-down text-xs text-slate-400 arrow-icon"></i>
                     </div>
                     
-                    <div class="space-y-2 md:space-y-3 flex-grow spec-content">
+                    <div class="space-y-2 md:space-y-3 spec-content">
                         <div class="rounded-md md:rounded-lg p-2 md:p-3 flex flex-col lg:flex-row lg:justify-between items-start lg:items-center bg-slate-50 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-700/50 text-slate-700 dark:text-slate-200 gap-1 md:gap-2">
                             <span class="text-[10px] md:text-sm flex items-center whitespace-nowrap"><i class="fa-solid fa-mobile-screen mr-1.5 md:mr-2 text-rose-500 w-3 md:w-4 text-center"></i>Tipe</span>
                             <span class="font-semibold text-[11px] md:text-sm text-left lg:text-right leading-snug">Portable Speaker</span>
@@ -346,19 +346,17 @@
         <p>&copy; 2026 ridz_angelica.ugg. Root and custom rom.</p>
     </footer>
 
-    <!-- Skrip Tema & Interaktif Card -->
+    <!-- Skrip Tema & Interaktif Akordeon Ringkas -->
     <script>
-        // Fungsi Interaktif Klik Kartu (Buka/Tutup Detail Spesifikasi)
         function toggleCard(cardElement) {
             const content = cardElement.querySelector('.spec-content');
-            const arrow = cardElement.querySelector('.arrow-icon');
             
-            if (content.classList.contains('collapsed')) {
-                content.classList.remove('collapsed');
-                if (arrow) arrow.style.transform = 'rotate(0deg)';
+            if (content.classList.contains('expanded')) {
+                content.classList.remove('expanded');
+                cardElement.classList.remove('expanded-card');
             } else {
-                content.classList.add('collapsed');
-                if (arrow) arrow.style.transform = 'rotate(-90deg)';
+                content.classList.add('expanded');
+                cardElement.classList.add('expanded-card');
             }
         }
 
